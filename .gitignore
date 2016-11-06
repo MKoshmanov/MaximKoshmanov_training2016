@@ -1,0 +1,13 @@
+webapp/.settings/org.eclipse.m2e.core.prefs
+webapp/.settings/org.eclipse.jdt.core.prefs
+webapp/.settings/
+services/.settings/
+dao-impl-db/.settings/
+dao-impl-xml/.settings/
+dao-impl-db/.classpath
+dao-api/.settings/
+*.classpath
+*.project
+datamodel/.settings/org.eclipse.core.resources.prefs
+datamodel/.settings/
+.settings/
