@@ -9,9 +9,9 @@ import com.mkoshmanov.training.transport.datamodel.Route;
 public interface RouteService {
 
 	@Transactional
-    void saveAll(List<Route> drivers);
+    void saveAll(List<Route> routes);
 
-    Long save(Route driver);
+    Long save(Route route);
 
     Route get(Long id);
     
