@@ -63,14 +63,17 @@ public class DriverServiceTest {
 	@Test
 
 	public void shouldReturnDriverById() {
-		Driver driver = driverService.get(15l);
-		assertEquals((Long) 15L, driver.getId());
+		Long id = driverService.save(savedDriver);
+
+		Driver driverInDataBase = driverService.get(id);
+		
+		assertEquals(savedDriver.getId(), driverInDataBase.getId());
 	}
 
 	@Test
 	public void saveDriverTest() {
 		Long id = driverService.save(savedDriver);
-		
+
 		Driver driverInDataBase = driverService.get(id);
 		assertEquals(savedDriver.getId(), driverInDataBase.getId());
 	}
@@ -78,8 +81,7 @@ public class DriverServiceTest {
 	@Test
 	public void getAllTest() {
 		List<Driver> drivers = driverService.getAll();
-		
-	
+
 		assertEquals(3, drivers.size());
 	}
 
@@ -91,7 +93,7 @@ public class DriverServiceTest {
 		driverService.delete(driver.getId());
 		List<Driver> driversAfterDelete = driverService.getAll();
 		int afterDelete = driversAfterDelete.size();
-		assertEquals(afterDelete+1, beforedelete);
+		assertEquals(afterDelete + 1, beforedelete);
 
 	}
 }
