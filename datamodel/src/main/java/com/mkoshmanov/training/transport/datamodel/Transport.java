@@ -1,10 +1,11 @@
 package com.mkoshmanov.training.transport.datamodel;
 
-public class Transport extends AbstractModel  {
-	
+public class Transport extends AbstractModel {
+
 	private String vehicle;
 	private String registrationNumber;
 	private String type;
+	private Long driverId;
 
 	public String getVehicle() {
 		return vehicle;
@@ -30,11 +31,18 @@ public class Transport extends AbstractModel  {
 		this.type = type;
 	}
 
+	public Long getDriverId() {
+		return driverId;
+	}
+
+	public void setDriverId(Long long1) {
+		this.driverId = long1;
+	}
+
 	@Override
 	public String toString() {
-		return "Transport [vehicle = " + vehicle + ", registration number=" + registrationNumber + ", type = " + type
+		return "Transport [vehicle = " + vehicle + ", registration_number=" + registrationNumber + ", type = " + type
 				+ ", getId() = " + getId() + "]";
 	}
 
 }
-

@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.mkoshmanov.training.transport.daodb.DriverDao;
+import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 import com.mkoshmanov.training.transport.services.DriverService;
 
@@ -19,6 +20,9 @@ public class DriverServiceImpl implements DriverService {
 
 	@Inject
 	private DriverDao driverDao;
+	
+	@Inject
+	private DriversOnRoute driverOnRoute;
 
 	@Override
 	public void saveAll(List<Driver> drivers) {
@@ -53,7 +57,9 @@ public class DriverServiceImpl implements DriverService {
 	@Override
 	public List<Driver> getAll() {
 		return driverDao.getAll();
-
 	}
-
+	public List<DriversOnRoute> driversOnParticularRoyte (Long id) {
+		return driverOnRoute.driversOnParticularRoute(id);
+		
+	}
 }

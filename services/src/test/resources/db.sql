@@ -48,7 +48,7 @@ CREATE TABLE "transport" (
 	"vehicle" character varying NOT NULL,
 	"registration_number" character varying(9) NOT NULL,
 	"type" character varying NOT NULL,
-	"driver_id" integer NOT NULL,
+	"driver_id" integer NOT NULL UNIQUE,
 	CONSTRAINT transport_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -76,5 +76,5 @@ ALTER TABLE "station" ADD CONSTRAINT "station_fk1" FOREIGN KEY ("route_id") REFE
 
 ALTER TABLE "route" ADD CONSTRAINT "route_fk0" FOREIGN KEY ("transport_id") REFERENCES "transport"("id");
 
-ALTER TABLE "transport" ADD CONSTRAINT "transport_fk0" FOREIGN KEY ("id") REFERENCES "driver"("id");
+ALTER TABLE "transport" ADD CONSTRAINT "transport_fk0" FOREIGN KEY ("driver_id") REFERENCES "driver"("id");
 

@@ -32,7 +32,7 @@ public class TransportDaoImpl implements TransportDao {
 
 	@Override
 	public Long insert(final Transport entity) {
-		final String INSERT_SQL = "insert into transport (vehicle, registration_number, type) values (?, ?, ?)";
+		final String INSERT_SQL = "insert into transport (vehicle, registration_number, type, driver_id) values (?, ?, ?, ?)";
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 
@@ -42,6 +42,7 @@ public class TransportDaoImpl implements TransportDao {
 				ps.setString(1, entity.getVehicle());
 				ps.setString(2, entity.getRegistrationNumber());
 				ps.setString(3, entity.getType());
+				ps.setLong(4, entity.getDriverId());
 				return ps;
 			}
 		}, keyHolder);
@@ -52,8 +53,8 @@ public class TransportDaoImpl implements TransportDao {
 
 	@Override
 	public void update(Transport entity) {
-		jdbcTemplate.update("update transport set vehicle=?, registrationNumber=?, type=?, where id=?",
-				new Object[] { entity.getVehicle(), entity.getRegistrationNumber(), entity.getType() });
+		jdbcTemplate.update("update transport set vehicle=?, registrationNumber=?, type=?, driver_id=? where id=?",
+				new Object[] { entity.getVehicle(), entity.getRegistrationNumber(), entity.getType(), entity.getDriverId() });
 
 	}
 

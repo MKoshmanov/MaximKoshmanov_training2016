@@ -15,6 +15,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daodb.DriverDao;
+import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 
 @Repository
