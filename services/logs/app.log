@@ -1,0 +1,22 @@
+15:38:00.263 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=41, first_name=Ivan, last_name=Ivanov
+15:38:00.348 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=42, first_name=Vasiliy, last_name=Pupkin
+15:38:00.349 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=43, first_name=Oleg, last_name=Vasechkin
+15:38:00.536 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=31, vehicle=bus, registration_number=AE 0001-4, type=usual, driver_id=41, route_id=10
+15:38:00.538 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=32, vehicle=bus, registration_number=AE 0002-4, type=usual, driver_id=42, route_id=10
+15:38:00.539 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=33, vehicle=bus, registration_number=AE 0003-4, type=usual, driver_id=43, route_id=10
+15:38:01.297 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - New route created. id=11, number=1
+15:38:01.304 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=44, first_name=Ivan, last_name=Ivanov
+15:38:01.305 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=45, first_name=Vasiliy, last_name=Pupkin
+15:38:01.306 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=46, first_name=Oleg, last_name=Vasechkin
+15:38:01.335 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=34, vehicle=bus, registration_number=AE 0001-4, type=usual, driver_id=44, route_id=11
+15:38:01.337 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=35, vehicle=bus, registration_number=AE 0002-4, type=usual, driver_id=45, route_id=11
+15:38:01.339 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=36, vehicle=bus, registration_number=AE 0003-4, type=usual, driver_id=46, route_id=11
+15:38:01.342 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=47, first_name=Igor, last_name=Muhin
+15:38:01.346 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=37, vehicle=troleybus, registration_number=AE- 0011-4, type=usual, driver_id=47, route_id=11
+15:38:02.319 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - New route created. id=12, number=1
+15:38:02.327 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=48, first_name=Ivan, last_name=Ivanov
+15:38:02.328 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=49, first_name=Vasiliy, last_name=Pupkin
+15:38:02.329 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=50, first_name=Oleg, last_name=Vasechkin
+15:38:02.341 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=38, vehicle=bus, registration_number=AE 0001-4, type=usual, driver_id=48, route_id=12
+15:38:02.343 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=39, vehicle=bus, registration_number=AE 0002-4, type=usual, driver_id=49, route_id=12
+15:38:02.344 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Ready new transport. id=40, vehicle=bus, registration_number=AE 0003-4, type=usual, driver_id=50, route_id=12

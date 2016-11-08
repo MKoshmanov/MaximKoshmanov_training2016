@@ -72,5 +72,7 @@ public class DriverDaoImpl implements DriverDao {
 				new BeanPropertyRowMapper<DriversOnRoute>(DriversOnRoute.class));
 		return rs;
 	}
+	
+	
 
 }

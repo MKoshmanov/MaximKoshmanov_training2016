@@ -5,17 +5,7 @@ import java.util.List;
 import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
 import com.mkoshmanov.training.transport.datamodel.Station;
 
-public interface StationDao {
+public interface StationDao extends GenericDao<Station> {
 
-	Station get(Long id);
-
-	Long insert(Station entity);
-
-	void update(Station entity);
-
-	void delete(Long id);
-
-	List<Station> getAll();
-	
 	List<StopAndRoute> countRoutesThroughStop(Long id);
 }
