@@ -32,8 +32,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 		</dependency>
-		
-		
+						
 	</dependencies>
 
 </project>

@@ -17,6 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.mkoshmanov.training.transport.datamodel.Driver;
+import com.mkoshmanov.training.transport.datamodel.Route;
 import com.mkoshmanov.training.transport.datamodel.Transport;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,6 +29,9 @@ public class TransportServiceTest {
 
 	@Inject
 	private TransportService transportService;
+	
+	@Inject
+	private RouteService routeService; 
 
 	@Inject
 	private DriverService driverService;
@@ -38,10 +42,15 @@ public class TransportServiceTest {
 	private Driver driverForTransportOne = new Driver();
 	private Driver driverForTransportTwo = new Driver();
 	private Driver driverForTransportThree = new Driver();
-
+	private Route routeForTest = new Route();
+	
+	
 	@Before
 	public void setUp() {
-
+		
+		routeForTest.setNumber(1); 
+		routeService.saveAll(Arrays.asList(routeForTest));
+		
 		driverForTransportOne.setFirstName("Ivan");
 		driverForTransportOne.setLastName("Ivanov");
 		driverForTransportTwo.setFirstName("Vasiliy");
@@ -54,14 +63,17 @@ public class TransportServiceTest {
 		transportOne.setRegistrationNumber("AE 0001-4");
 		transportOne.setType("usual");
 		transportOne.setDriverId(driverForTransportOne.getId());
+		transportOne.setRouteId(routeForTest.getId());
 		transportTwo.setVehicle("bus");
 		transportTwo.setRegistrationNumber("AE 0002-4");
 		transportTwo.setType("usual");
 		transportTwo.setDriverId(driverForTransportTwo.getId());
+		transportTwo.setRouteId(routeForTest.getId());
 		transportThree.setVehicle("bus");
 		transportThree.setRegistrationNumber("AE 0003-4");
 		transportThree.setType("usual");
 		transportThree.setDriverId(driverForTransportThree.getId());
+		transportThree.setRouteId(routeForTest.getId());
 		transportService.saveAll(Arrays.asList(transportOne, transportTwo, transportThree));
 
 	}
@@ -70,6 +82,7 @@ public class TransportServiceTest {
 	public void cleanScheama() {
 		jdbcTemplate.execute("TRUNCATE transport CASCADE ");
 		jdbcTemplate.execute("TRUNCATE driver CASCADE ");
+		jdbcTemplate.execute("TRUNCATE route CASCADE ");
 	}
 
 	@Test
@@ -83,6 +96,7 @@ public class TransportServiceTest {
 		transportForTest.setRegistrationNumber("AE- 0011-4");
 		transportForTest.setType("usual");
 		transportForTest.setDriverId(driverTransportForTest.getId());
+		transportForTest.setRouteId(routeForTest.getId());
 		Long id = transportService.save(transportForTest);
 		Transport transportInDataBase = transportService.get(id);
 		assertEquals(transportForTest.getRegistrationNumber(), transportInDataBase.getRegistrationNumber());

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 
 public interface DriverService {
@@ -18,5 +19,7 @@ public interface DriverService {
     List<Driver> getAll();
     
     void delete(Long id);
+    
+    List<DriversOnRoute> driversOnParticularRoyte (Long id);
    
 }

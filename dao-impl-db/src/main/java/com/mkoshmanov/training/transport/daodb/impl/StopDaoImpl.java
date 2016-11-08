@@ -15,9 +15,10 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daodb.StopDao;
+import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
 import com.mkoshmanov.training.transport.daodb.mapper.StopMapper;
 import com.mkoshmanov.training.transport.datamodel.Stop;
-
 
 @Repository
 public class StopDaoImpl implements StopDao {
@@ -54,8 +55,7 @@ public class StopDaoImpl implements StopDao {
 
 	@Override
 	public void update(Stop entity) {
-		jdbcTemplate.update("update stop set stop_name=?, where id=?",
-				new Object[] { entity.getStopName() });
+		jdbcTemplate.update("update stop set stop_name=?, where id=?", new Object[] { entity.getStopName() });
 	}
 
 	@Override
@@ -67,5 +67,7 @@ public class StopDaoImpl implements StopDao {
 	public List<Stop> getAll() {
 		return this.jdbcTemplate.query("select * from stop", new StopMapper());
 	}
+
+	
 
 }

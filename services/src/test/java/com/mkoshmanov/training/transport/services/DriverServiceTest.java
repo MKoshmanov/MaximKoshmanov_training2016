@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:test-service-context.xml")
+@ContextConfiguration(locations = "classpath:test-service-context.xml") 
 public class DriverServiceTest {
 
 	@Inject
@@ -27,9 +27,9 @@ public class DriverServiceTest {
 	@Inject
 	private DriverService driverService;
 	
-	protected Driver driverOne = new Driver();
-	protected Driver driverTwo = new Driver();
-	protected Driver driverThree = new Driver();
+	private Driver driverOne = new Driver();
+	private Driver driverTwo = new Driver();
+	private Driver driverThree = new Driver();
 	
 	@Before
 	public void setUp() {

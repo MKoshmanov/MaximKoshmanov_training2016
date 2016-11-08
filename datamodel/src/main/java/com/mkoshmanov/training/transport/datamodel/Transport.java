@@ -6,6 +6,7 @@ public class Transport extends AbstractModel {
 	private String registrationNumber;
 	private String type;
 	private Long driverId;
+	private Long routeId;
 
 	public String getVehicle() {
 		return vehicle;
@@ -39,10 +40,18 @@ public class Transport extends AbstractModel {
 		this.driverId = long1;
 	}
 
+	public Long getRouteId() {
+		return routeId;
+	}
+
+	public void setRouteId(Long long1) {
+		this.routeId = long1;
+	}
+
 	@Override
 	public String toString() {
 		return "Transport [vehicle = " + vehicle + ", registration_number=" + registrationNumber + ", type = " + type
-				+ ", getId() = " + getId() + "]";
+				+ ", routeId = " + routeId + ", getId() = " + getId() + "]";
 	}
 
 }

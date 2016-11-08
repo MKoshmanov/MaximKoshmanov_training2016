@@ -15,6 +15,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daodb.RouteDao;
+import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
 import com.mkoshmanov.training.transport.daodb.mapper.RouteMapper;
 import com.mkoshmanov.training.transport.datamodel.Route;
 
@@ -32,16 +33,14 @@ public class RouteDaoImpl implements RouteDao {
 
 	@Override
 	public Long insert(final Route entity) {
-		final String INSERT_SQL = "insert into route (number, transport_id) values (?, ?)";
+		final String INSERT_SQL = "insert into route (number) values (?)";
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(INSERT_SQL,
-						new String[] { "id" });
+				PreparedStatement ps = connection.prepareStatement(INSERT_SQL, new String[] { "id" });
 				ps.setInt(1, entity.getNumber());
-				ps.setInt(2, entity.getTransportId());
 				return ps;
 			}
 		}, keyHolder);
@@ -51,8 +50,7 @@ public class RouteDaoImpl implements RouteDao {
 
 	@Override
 	public void update(Route entity) {
-		jdbcTemplate.update("update route set number=?, transport_id=?, where id=?",
-				new Object[] { entity.getNumber(), entity.getTransportId() });
+		jdbcTemplate.update("update route set number=? where id=?", new Object[] { entity.getNumber() });
 	}
 
 	@Override
@@ -66,4 +64,12 @@ public class RouteDaoImpl implements RouteDao {
 		return this.jdbcTemplate.query("select * from route", new RouteMapper());
 	}
 
+	@Override
+	public List<StopsOnRoute> getStopsOnRoute(Long id) {
+		List<StopsOnRoute> rs = jdbcTemplate.query(
+				"SELECT stop.stop_name, r.number FROM stop RIGHT JOIN station st ON stop.id = st.stop_id "
+						+ "RIGHT JOIN route r ON st.route_id = r.id WHERE r.id=?",
+				new BeanPropertyRowMapper<StopsOnRoute>(StopsOnRoute.class));
+		return rs;
+	}
 }

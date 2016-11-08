@@ -16,12 +16,14 @@ public class TransportMapper implements RowMapper<Transport> {
 		String registrationNumber = rs.getString("registration_number");
 		String type = rs.getString("type");
 		Long driverId = rs.getLong("driver_id");
+		Long routeId = rs.getLong("route_id");
 		Transport entity = new Transport();
 		entity.setId(id);
 		entity.setVehicle(vehicle);
 		entity.setRegistrationNumber(registrationNumber);
 		entity.setType(type);
 		entity.setId(driverId);
+		entity.setRouteId(routeId);
 		return entity;
 	}
 

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
 import com.mkoshmanov.training.transport.datamodel.Route;
 
 public interface RouteService {
@@ -18,5 +20,7 @@ public interface RouteService {
     List<Route> getAll();
     
     void delete(Long id);
-	
+    
+    List<StopsOnRoute> getStopsOnParticularRoyte (Long id);
+    	
 }

@@ -13,11 +13,9 @@ public class RouteMapper implements RowMapper<Route> {
 	public Route mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Long id = rs.getLong("id");
 		Integer number = rs.getInt("number");
-		Integer transportId = rs.getInt("transport id");
 		Route entity = new Route();
 		entity.setId(id);
 		entity.setNumber(number);
-		entity.setTransportId(transportId);
 		return entity;
 	}
 

@@ -21,9 +21,6 @@ public class DriverServiceImpl implements DriverService {
 	@Inject
 	private DriverDao driverDao;
 	
-	@Inject
-	private DriversOnRoute driverOnRoute;
-
 	@Override
 	public void saveAll(List<Driver> drivers) {
 		for (Driver driver : drivers) {
@@ -58,8 +55,10 @@ public class DriverServiceImpl implements DriverService {
 	public List<Driver> getAll() {
 		return driverDao.getAll();
 	}
+	
+	@Override
 	public List<DriversOnRoute> driversOnParticularRoyte (Long id) {
-		return driverOnRoute.driversOnParticularRoute(id);
+		return driverDao.driversOnParticularRoute(id);
 		
 	}
 }

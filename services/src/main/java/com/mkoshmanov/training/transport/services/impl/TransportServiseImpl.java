@@ -31,9 +31,9 @@ public class TransportServiseImpl implements TransportService {
 	public Long save(Transport transport) {
 		if (transport.getId() == null) {
 			Long id = transportDao.insert(transport);
-			LOGGER.info("Ready new transport. id={}, vehicle={}, registration_number={}, type={}, driver_id={}",
+			LOGGER.info("Ready new transport. id={}, vehicle={}, registration_number={}, type={}, driver_id={}, route_id={}",
 					transport.getId(), transport.getVehicle(), transport.getRegistrationNumber(), transport.getType(),
-					transport.getDriverId());
+					transport.getDriverId(), transport.getRouteId());
 			return id;
 		} else {
 			transportDao.update(transport);

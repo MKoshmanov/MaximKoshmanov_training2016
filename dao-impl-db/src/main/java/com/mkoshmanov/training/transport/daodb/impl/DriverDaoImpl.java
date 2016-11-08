@@ -50,7 +50,7 @@ public class DriverDaoImpl implements DriverDao {
 
 	@Override
 	public void update(Driver entity) {
-		jdbcTemplate.update("update driver set first_name=?, last_name=?, where id=?",
+		jdbcTemplate.update("update driver set first_name=?, last_name=? where id=?",
 				new Object[] { entity.getFirstName(), entity.getLastName() });
 	}
 
@@ -62,6 +62,14 @@ public class DriverDaoImpl implements DriverDao {
 	@Override
 	public List<Driver> getAll() {
 		List<Driver> rs = jdbcTemplate.query("select * from driver", new BeanPropertyRowMapper<Driver>(Driver.class));
+		return rs;
+	}
+
+	@Override
+	public List<DriversOnRoute> driversOnParticularRoute(Long id) {
+		List<DriversOnRoute> rs = jdbcTemplate.query(
+				"SELECT * FROM driver d RIGHT JOIN transport t ON t.driver_id = d.id RIGHT JOIN route r ON r.transport_id = t.id WHERE r.number = ?",
+				new BeanPropertyRowMapper<DriversOnRoute>(DriversOnRoute.class));
 		return rs;
 	}
 
