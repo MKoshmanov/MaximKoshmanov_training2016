@@ -15,9 +15,9 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daodb.StationDao;
+import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
 import com.mkoshmanov.training.transport.daodb.mapper.StationMapper;
 import com.mkoshmanov.training.transport.datamodel.Station;
-
 
 @Repository
 public class StationDaoImpl implements StationDao {
@@ -38,8 +38,7 @@ public class StationDaoImpl implements StationDao {
 
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(INSERT_SQL,
-						new String[] { "id" });
+				PreparedStatement ps = connection.prepareStatement(INSERT_SQL, new String[] { "id" });
 				ps.setInt(1, entity.getStopId());
 				ps.setInt(2, entity.getRouteId());
 				ps.setInt(3, entity.getSequence());
@@ -64,6 +63,14 @@ public class StationDaoImpl implements StationDao {
 	@Override
 	public List<Station> getAll() {
 		return this.jdbcTemplate.query("select * from station", new StationMapper());
+	}
+
+	@Override
+	public List<StopAndRoute> countRoutesThroughStop(Long id) {
+		List<StopAndRoute> rs = jdbcTemplate.query(
+				"SELECT stop.name, r.number FROM stop JOIN station st ON stop.id = st.stop_id JOIN route r ON st.route_id = r.id WHERE stop.id = ?",
+				new BeanPropertyRowMapper<StopAndRoute>(StopAndRoute.class));
+		return rs;
 	}
 
 }

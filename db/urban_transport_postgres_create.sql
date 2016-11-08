@@ -78,3 +78,4 @@ ALTER TABLE "station" ADD CONSTRAINT "station_fk1" FOREIGN KEY ("route_id") REFE
 ALTER TABLE "transport" ADD CONSTRAINT "transport_fk0" FOREIGN KEY ("driver_id") REFERENCES "driver"("id");
 ALTER TABLE "transport" ADD CONSTRAINT "transport_fk1" FOREIGN KEY ("route_id") REFERENCES "route"("id");
 
+

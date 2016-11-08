@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.mkoshmanov.training.transport.daodb.RouteDao;
-import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
 import com.mkoshmanov.training.transport.datamodel.Route;
 import com.mkoshmanov.training.transport.services.RouteService;
 
@@ -17,10 +17,10 @@ import com.mkoshmanov.training.transport.services.RouteService;
 public class RouteServiceImpl implements RouteService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DriverServiceImpl.class);
-	
+
 	@Inject
 	private RouteDao routeDao;
-	
+
 	@Override
 	public void saveAll(List<Route> routes) {
 		for (Route route : routes) {
@@ -39,32 +39,26 @@ public class RouteServiceImpl implements RouteService {
 			return route.getId();
 		}
 	}
-       
-	
-	
-	
+
 	@Override
 	public Route get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return routeDao.get(id);
 	}
 
 	@Override
 	public List<Route> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return routeDao.getAll();
 	}
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		routeDao.delete(id);
 
 	}
 
 	@Override
-	public List<StopsOnRoute> getStopsOnParticularRoyte(Long id) {
-		return routeDao.getStopsOnRoute(id);
-		
+	public List<StopAndRoute> stopsOnRoute(Long id) {
+		return routeDao.stopsOnRoute(id);
 	}
 
 }

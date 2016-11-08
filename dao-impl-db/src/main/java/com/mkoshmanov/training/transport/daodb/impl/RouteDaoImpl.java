@@ -15,7 +15,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daodb.RouteDao;
-import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
 import com.mkoshmanov.training.transport.daodb.mapper.RouteMapper;
 import com.mkoshmanov.training.transport.datamodel.Route;
 
@@ -65,11 +65,11 @@ public class RouteDaoImpl implements RouteDao {
 	}
 
 	@Override
-	public List<StopsOnRoute> getStopsOnRoute(Long id) {
-		List<StopsOnRoute> rs = jdbcTemplate.query(
+	public List<StopAndRoute> stopsOnRoute(Long id) {
+		List<StopAndRoute> rs = jdbcTemplate.query(
 				"SELECT stop.stop_name, r.number FROM stop RIGHT JOIN station st ON stop.id = st.stop_id "
 						+ "RIGHT JOIN route r ON st.route_id = r.id WHERE r.id=?",
-				new BeanPropertyRowMapper<StopsOnRoute>(StopsOnRoute.class));
+				new BeanPropertyRowMapper<StopAndRoute>(StopAndRoute.class));
 		return rs;
 	}
 }

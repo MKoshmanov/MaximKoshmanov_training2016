@@ -4,8 +4,7 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
-import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
 import com.mkoshmanov.training.transport.datamodel.Route;
 
 public interface RouteService {
@@ -21,6 +20,10 @@ public interface RouteService {
     
     void delete(Long id);
     
-    List<StopsOnRoute> getStopsOnParticularRoyte (Long id);
+    /**
+     * @param id
+     * @return list stops which are located on particular route
+     */
+    List<StopAndRoute> stopsOnRoute (Long id);
     	
 }

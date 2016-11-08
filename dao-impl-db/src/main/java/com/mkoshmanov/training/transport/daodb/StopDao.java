@@ -15,5 +15,5 @@ public interface StopDao {
 	void delete(Long id);
 
 	List<Stop> getAll();
-
+	
 }

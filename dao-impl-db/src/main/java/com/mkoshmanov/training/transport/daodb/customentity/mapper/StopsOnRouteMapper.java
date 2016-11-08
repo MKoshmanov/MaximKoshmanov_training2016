@@ -5,15 +5,15 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
 import com.mkoshmanov.training.transport.datamodel.Route;
 import com.mkoshmanov.training.transport.datamodel.Station;
 import com.mkoshmanov.training.transport.datamodel.Stop;
 
-public class StopsOnRouteMapper implements RowMapper<StopsOnRoute> {
+public class StopsOnRouteMapper implements RowMapper<StopAndRoute> {
 
 	@Override
-	public StopsOnRoute mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public StopAndRoute mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Route route = new Route();
 		route.setId(rs.getLong("id"));
 		route.setNumber(rs.getInt("number"));
@@ -28,7 +28,7 @@ public class StopsOnRouteMapper implements RowMapper<StopsOnRoute> {
 		stop.setId(rs.getLong("id"));
 		stop.setStopName(rs.getString("stop_name"));
 		
-		StopsOnRoute stopsOnRoute = new StopsOnRoute();
+		StopAndRoute stopsOnRoute = new StopAndRoute();
 		stopsOnRoute.setRoute(route);
 		stopsOnRoute.setStation(station);
 		stopsOnRoute.setStop(stop);

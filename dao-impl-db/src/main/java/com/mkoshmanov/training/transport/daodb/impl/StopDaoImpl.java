@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daodb.StopDao;
 import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
-import com.mkoshmanov.training.transport.daodb.customentity.StopsOnRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
 import com.mkoshmanov.training.transport.daodb.mapper.StopMapper;
 import com.mkoshmanov.training.transport.datamodel.Stop;
 

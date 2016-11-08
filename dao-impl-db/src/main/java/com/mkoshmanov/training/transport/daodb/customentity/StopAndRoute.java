@@ -4,11 +4,12 @@ import com.mkoshmanov.training.transport.datamodel.Route;
 import com.mkoshmanov.training.transport.datamodel.Station;
 import com.mkoshmanov.training.transport.datamodel.Stop;
 
-public class StopsOnRoute {
+public class StopAndRoute {
 	
 	private Route route;
 	private Station station;
 	private Stop stop;
+	
 	public Route getRoute() {
 		return route;
 	}
