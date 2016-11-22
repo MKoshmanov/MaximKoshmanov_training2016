@@ -5,15 +5,17 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 public interface IGenericService<T> {
-	
-	@Transactional
+
 	T get(Long id);
 
+	@Transactional
 	Long save(T entity);
 
+	@Transactional
 	void saveAll(List<T> entity);
 
+	@Transactional
 	void delete(Long id);
-
+	
 	List<T> getAll();
 }

@@ -4,67 +4,40 @@
 	version="3.0">
 
 	<display-name>myproject</display-name>
-	
-	<context-param>
-	    <param-name>contextConfigLocation</param-name>
-	    <param-value>classpath:web-applicationContext.xml</param-value>
-	</context-param>
-	
-	<listener>
-	   <listener-class>
-	        org.springframework.web.context.ContextLoaderListener
-	   </listener-class>
-	</listener> 
-	
+
 	<servlet>
-	   <servlet-name>ServletExample</servlet-name>
-	   <servlet-class>com.mkoshmanov.training.transport.web.servlets.ServletExample</servlet-class>
+		<servlet-name>ServletExample</servlet-name>
+		<servlet-class>com.mkoshmanov.training.transport.web.servlets.ServletExample</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>HelloWeb</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:web-applicationContext.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
 	<servlet-mapping>
-	   <servlet-name>ServletExample</servlet-name>
-	   <url-pattern>/myFirtsService</url-pattern>
+		<servlet-name>ServletExample</servlet-name>
+		<url-pattern>/myFirtsService</url-pattern>
 	</servlet-mapping>
-	
+
+	<servlet-mapping>
+		<servlet-name>HelloWeb</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
 	<filter>
 		<filter-name>LogFilter</filter-name>
 		<filter-class>com.mkoshmanov.training.transport.web.servlets.LogFilter</filter-class>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>LogFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/</url-pattern>
 	</filter-mapping>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <servlet>
-  	<servlet-name>mvc-dispatcher</servlet-name>
-        <servlet-class>
-             org.springframework.web.servlet.DispatcherServlet
-        </servlet-class>
-        <load-on-startup>1</load-on-startup>
-  </servlet>
-
-  <servlet-mapping>
- 	<servlet-name>mvc-dispatcher</servlet-name>
-        <url-pattern>*.htm</url-pattern>
-  </servlet-mapping>
- -->
 </web-app>

@@ -33,7 +33,7 @@ public class DriverDaoXmlImpl implements IDriverDao {
 		xstream = new XStream();
 		xstream.alias("driver", Driver.class);
 
-		file = new File(basePath + "/books.xml");
+		file = new File(basePath + "/drivers.xml");
 		if (!file.exists()) {
 			file.createNewFile();
 			xstream.toXML(new ArrayList<>(), new FileOutputStream(file));

@@ -11,10 +11,11 @@
 
 	<properties>
 		<customVar>com.mkoshmanov.training</customVar>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<common.project.version>1.0</common.project.version>
+		<common.project.version>1.0.0</common.project.version>
 		<spring.version>4.0.3.RELEASE</spring.version>
 		<jetty9.version>9.2.13.v20150730</jetty9.version>
+		<jackson.version>1.9.13</jackson.version>
+		<log4j.version>2.1</log4j.version>
 	</properties>
 
 	<modules>
@@ -53,7 +54,6 @@
 				<version>1.0.0</version>
 			</dependency>
 
-
 			<dependency>
 				<groupId>com.mkoshmanov.training</groupId>
 				<artifactId>services</artifactId>
@@ -66,149 +66,129 @@
 				<version>1.0.0</version>
 			</dependency>
 
-
-
-
-
-			<!-- Other libraries -->
+			<!-- Jackson JSON Mapper -->
+			<dependency>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-core-asl</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
 
 			<dependency>
-				<groupId>javax.inject</groupId>
-				<artifactId>javax.inject</artifactId>
-				<version>1</version>
+				<groupId>org.codehaus.jackson</groupId>
+				<artifactId>jackson-mapper-asl</artifactId>
+				<version>${jackson.version}</version>
 			</dependency>
+
 			<!-- Spring framework -->
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-core</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-jdbc</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-beans</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context-support</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-orm</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-webmvc</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-web</artifactId>
 				<version>${spring.version}</version>
 			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-test</artifactId>
 				<version>${spring.version}</version>
 				<scope>test</scope>
 			</dependency>
-
-
+			
+			<!-- @Inject -->
 			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>3.1</version>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
 			</dependency>
 
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>2.5</version>
-			</dependency>
-			<!-- https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
-			<dependency>
-				<groupId>com.thoughtworks.xstream</groupId>
-				<artifactId>xstream</artifactId>
-				<version>1.4.9</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.postgresql</groupId>
-				<artifactId>postgresql</artifactId>
-				<version>9.3-1100-jdbc41</version>
-			</dependency>
-
-			<dependency>
-				<groupId>commons-dbcp</groupId>
-				<artifactId>commons-dbcp</artifactId>
-				<version>1.4</version>
-			</dependency>
-
-
-
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.12</version>
-				<scope>test</scope>
-			</dependency>
-
-
-
-
+			<!-- Log4j dependencies -->
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-api</artifactId>
-				<version>2.1</version>
+				<version>${log4j.version}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-core</artifactId>
-				<version>2.1</version>
+				<version>${log4j.version}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-slf4j-impl</artifactId>
-				<version>2.1</version>
+				<version>${log4j.version}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-jcl</artifactId>
-				<version>2.1</version>
+				<version>${log4j.version}</version>
 			</dependency>
-
-
-			<!-- JETTY DEPENDENCIES FOR TESTING -->
+			
+			<!-- Jetty dependencies for testing -->
 			<dependency>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-server</artifactId>
 				<version>${jetty9.version}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-webapp</artifactId>
 				<version>${jetty9.version}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-util</artifactId>
 				<version>${jetty9.version}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-jmx</artifactId>
@@ -216,16 +196,44 @@
 				<scope>test</scope>
 			</dependency>
 
+			<!-- Other libraries -->
 			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-web</artifactId>
-				<version>${spring.version}</version>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>1.4.9</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>9.3-1100-jdbc41</version>
+			</dependency>	
+			
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.5</version>
 			</dependency>
 
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>1.4</version>
+			</dependency>		
 		</dependencies>
 	</dependencyManagement>
-
-
 
 	<build>
 		<plugins>

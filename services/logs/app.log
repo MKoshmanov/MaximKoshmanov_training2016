@@ -65,3 +65,13 @@
 15:46:57.082 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=195, first_name=Ivan, last_name=Ivanov
 15:46:57.084 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=196, first_name=Vasiliy, last_name=Pupkin
 15:46:57.085 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=197, first_name=Oleg, last_name=Vasechkin
+23:25:55.126 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=198, first_name=Ivan, last_name=Ivanov
+23:25:55.174 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=199, first_name=Vasiliy, last_name=Pupkin
+23:25:55.176 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=200, first_name=Oleg, last_name=Vasechkin
+23:25:55.178 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=201, first_name=Sergey, last_name=Nikolaev
+23:25:55.661 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=202, first_name=Ivan, last_name=Ivanov
+23:25:55.663 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=203, first_name=Vasiliy, last_name=Pupkin
+23:25:55.665 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=204, first_name=Oleg, last_name=Vasechkin
+23:25:55.876 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=205, first_name=Ivan, last_name=Ivanov
+23:25:55.878 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=206, first_name=Vasiliy, last_name=Pupkin
+23:25:55.880 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire. id=207, first_name=Oleg, last_name=Vasechkin
