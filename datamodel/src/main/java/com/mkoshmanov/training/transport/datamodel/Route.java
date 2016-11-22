@@ -3,6 +3,7 @@ package com.mkoshmanov.training.transport.datamodel;
 public class Route extends AbstractModel {
 	
 	private Integer number;
+	private String direction;
 	
 	public Integer getNumber() {
 		return number;
@@ -11,10 +12,19 @@ public class Route extends AbstractModel {
 	public void setNumber(Integer number) {
 		this.number = number;
 	}
+	
+	public String getDirection() {
+		return direction;
+	}
+
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
 
 	@Override
 	public String toString() {
-		return "Route [number = " + number + ", getId() = " + getId() + "]";
+		return "Route [number=" + number + ", direction=" + direction + ", getId()=" + getId() + "]";
 	}
 
+	
 }

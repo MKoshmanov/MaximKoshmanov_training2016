@@ -8,18 +8,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.mkoshmanov.training.transport.daodb.RouteDao;
-import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
+import com.mkoshmanov.training.transport.daoapi.IRouteDao;
+import com.mkoshmanov.training.transport.daodb.customentity.PublicTransportStopAndRoute;
 import com.mkoshmanov.training.transport.datamodel.Route;
-import com.mkoshmanov.training.transport.services.RouteService;
+import com.mkoshmanov.training.transport.services.IRouteService;
 
 @Service
-public class RouteServiceImpl implements RouteService {
+public class RouteServiceImpl implements IRouteService {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(DriverServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(RouteServiceImpl.class);
 
 	@Inject
-	private RouteDao routeDao;
+	private IRouteDao routeDao;
 
 	@Override
 	public void saveAll(List<Route> routes) {
@@ -32,7 +32,7 @@ public class RouteServiceImpl implements RouteService {
 	public Long save(Route route) {
 		if (route.getId() == null) {
 			Long id = routeDao.insert(route);
-			LOGGER.info("New route created. id={}, number={}", route.getId(), route.getNumber());
+			LOGGER.info("New route created. id={}, number={}, direction={}", route.getId(), route.getNumber(), route.getDirection());
 			return id;
 		} else {
 			routeDao.update(route);
@@ -42,7 +42,7 @@ public class RouteServiceImpl implements RouteService {
 
 	@Override
 	public Route get(Long id) {
-		return routeDao.get(id);
+		return routeDao.getById(id);
 	}
 
 	@Override
@@ -57,7 +57,7 @@ public class RouteServiceImpl implements RouteService {
 	}
 
 	@Override
-	public List<StopAndRoute> stopsOnRoute(Long id) {
+	public List<PublicTransportStopAndRoute> stopsOnRoute(Long id) {
 		return routeDao.stopsOnRoute(id);
 	}
 

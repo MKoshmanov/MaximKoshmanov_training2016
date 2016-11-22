@@ -21,15 +21,15 @@ public class DriversOnRouteMapper implements RowMapper<DriversOnRoute> {
 		Route route = new Route();
 		route.setId(rs.getLong("id"));
 		route.setNumber(rs.getInt("number"));
+		route.setDirection(rs.getString("direction"));
 				
 		Transport transport = new Transport();
 		transport.setId(rs.getLong("id"));
-		transport.setVehicle(rs.getString("vehicle"));
-		transport.setRegistrationNumber(rs.getString("registration_number"));
 		transport.setType(rs.getString("type"));
+		transport.setRegistrationNumber(rs.getString("registration_number"));
 		transport.setDriverId(rs.getLong("driver_id"));
 		transport.setRouteId(rs.getLong("route_id"));
-
+		
 		DriversOnRoute driversOnRoute = new DriversOnRoute();
 		driversOnRoute.setDriver(driver);
 		driversOnRoute.setRoute(route);

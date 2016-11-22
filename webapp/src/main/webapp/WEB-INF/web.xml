@@ -4,45 +4,67 @@
 	version="3.0">
 
 	<display-name>myproject</display-name>
-
-	<!-- There are three means to configure Wickets configuration mode and they 
-		are tested in the order given. 1) A system property: -Dwicket.configuration 
-		2) servlet specific <init-param> 3) context specific <context-param> The 
-		value might be either "development" (reloading when templates change) or 
-		"deployment". If no configuration is found, "development" is the default. -->
-
-	<!--context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:spring-context.xml</param-value>
+	
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>classpath:web-applicationContext.xml</param-value>
 	</context-param>
+	
 	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-
+	   <listener-class>
+	        org.springframework.web.context.ContextLoaderListener
+	   </listener-class>
+	</listener> 
+	
+	<servlet>
+	   <servlet-name>ServletExample</servlet-name>
+	   <servlet-class>com.mkoshmanov.training.transport.web.servlets.ServletExample</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	   <servlet-name>ServletExample</servlet-name>
+	   <url-pattern>/myFirtsService</url-pattern>
+	</servlet-mapping>
+	
 	<filter>
-		<filter-name>wicket.myproject</filter-name>
-		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
-		<init-param>
-			<param-name>applicationFactoryClassName</param-name>
-			<param-value>org.apache.wicket.spring.SpringWebApplicationFactory</param-value>
-		</init-param>
-		<init-param>
-			<param-name>applicationBean</param-name>
-			<param-value>MyWebApplication</param-value>
-		</init-param>
+		<filter-name>LogFilter</filter-name>
+		<filter-class>com.mkoshmanov.training.transport.web.servlets.LogFilter</filter-class>
 	</filter>
-
-
-
-
+	
 	<filter-mapping>
-		<filter-name>wicket.myproject</filter-name>
+		<filter-name>LogFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping-->
+	</filter-mapping>
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <servlet>
+  	<servlet-name>mvc-dispatcher</servlet-name>
+        <servlet-class>
+             org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+ 	<servlet-name>mvc-dispatcher</servlet-name>
+        <url-pattern>*.htm</url-pattern>
+  </servlet-mapping>
+ -->
 </web-app>

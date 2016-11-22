@@ -12,17 +12,15 @@ public class TransportMapper implements RowMapper<Transport> {
 	@Override
 	public Transport mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Long id = rs.getLong("id");
-		String vehicle = rs.getString("vehicle");
-		String registrationNumber = rs.getString("registration_number");
 		String type = rs.getString("type");
+		String registrationNumber = rs.getString("registration_number");
 		Long driverId = rs.getLong("driver_id");
 		Long routeId = rs.getLong("route_id");
 		Transport entity = new Transport();
 		entity.setId(id);
-		entity.setVehicle(vehicle);
-		entity.setRegistrationNumber(registrationNumber);
 		entity.setType(type);
-		entity.setId(driverId);
+		entity.setRegistrationNumber(registrationNumber);
+		entity.setDriverId(driverId);
 		entity.setRouteId(routeId);
 		return entity;
 	}

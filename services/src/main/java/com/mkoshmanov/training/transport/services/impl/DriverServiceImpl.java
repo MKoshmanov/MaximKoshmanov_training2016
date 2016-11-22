@@ -8,18 +8,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.mkoshmanov.training.transport.daodb.DriverDao;
+import com.mkoshmanov.training.transport.daoapi.IDriverDao;
 import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
 import com.mkoshmanov.training.transport.datamodel.Driver;
-import com.mkoshmanov.training.transport.services.DriverService;
+import com.mkoshmanov.training.transport.services.IDriverService;
 
 @Service
-public class DriverServiceImpl implements DriverService {
+public class DriverServiceImpl implements IDriverService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DriverServiceImpl.class);
 
 	@Inject
-	private DriverDao driverDao;
+	private IDriverDao driverDao;
 	
 	@Override
 	public void saveAll(List<Driver> drivers) {
@@ -43,7 +43,7 @@ public class DriverServiceImpl implements DriverService {
 
 	@Override
 	public Driver get(Long id) {
-		return driverDao.get(id);
+		return driverDao.getById(id);
 	}
 	
 	@Override
@@ -57,8 +57,19 @@ public class DriverServiceImpl implements DriverService {
 	}
 	
 	@Override
-	public List<DriversOnRoute> driversOnParticularRoyte (Long id) {
-		return driverDao.driversOnParticularRoute(id);
+	public List<DriversOnRoute> getDriversOnParticularRoyte (Integer number) {
+		return driverDao.getDriversOnParticularRoute(number);
 		
 	}
+
+	@Override
+	public List<DriversOnRoute> getAllBusyDrivers() {
+		return driverDao.getAllBusyDrivers();
+	}
+
+	@Override
+	public List<DriversOnRoute> getAllFreeDrivers() {
+		return driverDao.getAllFreeDrivers();
+	}
+
 }

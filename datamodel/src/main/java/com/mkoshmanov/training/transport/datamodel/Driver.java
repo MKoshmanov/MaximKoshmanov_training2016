@@ -23,7 +23,8 @@ public class Driver extends AbstractModel {
 
 	@Override
 	public String toString() {
-		return "Driver [first name = " + firstName + ", last name = " + lastName + ", getId()=" + getId() + "]";
+		return "Driver [firstName=" + firstName + ", lastName=" + lastName + ", getId()=" + getId() + "]";
 	}
 
+	
 }

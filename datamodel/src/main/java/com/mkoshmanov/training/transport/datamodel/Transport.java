@@ -2,18 +2,17 @@ package com.mkoshmanov.training.transport.datamodel;
 
 public class Transport extends AbstractModel {
 
-	private String vehicle;
-	private String registrationNumber;
 	private String type;
+	private String registrationNumber;
 	private Long driverId;
 	private Long routeId;
 
-	public String getVehicle() {
-		return vehicle;
+	public String getType() {
+		return type;
 	}
 
-	public void setVehicle(String vehicle) {
-		this.vehicle = vehicle;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getRegistrationNumber() {
@@ -24,14 +23,6 @@ public class Transport extends AbstractModel {
 		this.registrationNumber = registrationNumber;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
 	public Long getDriverId() {
 		return driverId;
 	}
@@ -39,7 +30,7 @@ public class Transport extends AbstractModel {
 	public void setDriverId(Long long1) {
 		this.driverId = long1;
 	}
-
+	
 	public Long getRouteId() {
 		return routeId;
 	}
@@ -50,8 +41,8 @@ public class Transport extends AbstractModel {
 
 	@Override
 	public String toString() {
-		return "Transport [vehicle = " + vehicle + ", registration_number=" + registrationNumber + ", type = " + type
-				+ ", routeId = " + routeId + ", getId() = " + getId() + "]";
+		return "Transport [type=" + type + ", registrationNumber=" + registrationNumber + ", driverId=" + driverId
+				+ ", routeId=" + routeId + ", getId()=" + getId() + "]";
 	}
-
+	
 }

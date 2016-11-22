@@ -28,13 +28,13 @@ public class TransportServiceTest {
 	private JdbcTemplate jdbcTemplate;
 
 	@Inject
-	private TransportService transportService;
+	private ITransportService transportService;
 	
 	@Inject
-	private RouteService routeService; 
+	private IRouteService routeService; 
 
 	@Inject
-	private DriverService driverService;
+	private IDriverService driverService;
 
 	private Transport transportOne = new Transport();
 	private Transport transportTwo = new Transport();
@@ -48,7 +48,8 @@ public class TransportServiceTest {
 	@Before
 	public void setUp() {
 		
-		routeForTest.setNumber(1); 
+		routeForTest.setNumber(1);
+		routeForTest.setDirection("From A to B");
 		routeService.saveAll(Arrays.asList(routeForTest));
 		
 		driverForTransportOne.setFirstName("Ivan");
@@ -59,19 +60,16 @@ public class TransportServiceTest {
 		driverForTransportThree.setLastName("Vasechkin");
 		driverService.saveAll(Arrays.asList(driverForTransportOne, driverForTransportTwo, driverForTransportThree));
 
-		transportOne.setVehicle("bus");
-		transportOne.setRegistrationNumber("AE 0001-4");
 		transportOne.setType("usual");
+		transportOne.setRegistrationNumber("AE 0001-4");
 		transportOne.setDriverId(driverForTransportOne.getId());
 		transportOne.setRouteId(routeForTest.getId());
-		transportTwo.setVehicle("bus");
-		transportTwo.setRegistrationNumber("AE 0002-4");
 		transportTwo.setType("usual");
+		transportTwo.setRegistrationNumber("AE 0002-4");
 		transportTwo.setDriverId(driverForTransportTwo.getId());
 		transportTwo.setRouteId(routeForTest.getId());
-		transportThree.setVehicle("bus");
-		transportThree.setRegistrationNumber("AE 0003-4");
 		transportThree.setType("usual");
+		transportThree.setRegistrationNumber("AE 0003-4");
 		transportThree.setDriverId(driverForTransportThree.getId());
 		transportThree.setRouteId(routeForTest.getId());
 		transportService.saveAll(Arrays.asList(transportOne, transportTwo, transportThree));
@@ -92,9 +90,8 @@ public class TransportServiceTest {
 		driverTransportForTest.setLastName("Muhin");
 		driverService.save(driverTransportForTest);
 		Transport transportForTest = new Transport();
-		transportForTest.setVehicle("troleybus");
-		transportForTest.setRegistrationNumber("AE- 0011-4");
 		transportForTest.setType("usual");
+		transportForTest.setRegistrationNumber("AE- 0011-4");
 		transportForTest.setDriverId(driverTransportForTest.getId());
 		transportForTest.setRouteId(routeForTest.getId());
 		Long id = transportService.save(transportForTest);

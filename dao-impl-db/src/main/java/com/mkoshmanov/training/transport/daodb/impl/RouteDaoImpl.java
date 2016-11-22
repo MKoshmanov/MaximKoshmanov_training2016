@@ -14,26 +14,26 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import com.mkoshmanov.training.transport.daodb.RouteDao;
-import com.mkoshmanov.training.transport.daodb.customentity.StopAndRoute;
+import com.mkoshmanov.training.transport.daoapi.IRouteDao;
+import com.mkoshmanov.training.transport.daodb.customentity.PublicTransportStopAndRoute;
 import com.mkoshmanov.training.transport.daodb.mapper.RouteMapper;
 import com.mkoshmanov.training.transport.datamodel.Route;
 
 @Repository
-public class RouteDaoImpl implements RouteDao {
+public class RouteDaoImpl implements IRouteDao {
 
 	@Inject
 	private JdbcTemplate jdbcTemplate;
 
 	@Override
-	public Route get(Long id) {
-		return jdbcTemplate.queryForObject("select * from route where id = ?", new Object[] { id },
+	public Route getById(Long id) {
+		return jdbcTemplate.queryForObject("SELECT * FROM route WHERE id = ?", new Object[] { id },
 				new BeanPropertyRowMapper<Route>(Route.class));
 	}
 
 	@Override
 	public Long insert(final Route entity) {
-		final String INSERT_SQL = "insert into route (number) values (?)";
+		final String INSERT_SQL = "INSERT INTO route (number, direction) VALUES (?, ?)";
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 
@@ -41,6 +41,7 @@ public class RouteDaoImpl implements RouteDao {
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 				PreparedStatement ps = connection.prepareStatement(INSERT_SQL, new String[] { "id" });
 				ps.setInt(1, entity.getNumber());
+				ps.setString(2, entity.getDirection());
 				return ps;
 			}
 		}, keyHolder);
@@ -50,26 +51,27 @@ public class RouteDaoImpl implements RouteDao {
 
 	@Override
 	public void update(Route entity) {
-		jdbcTemplate.update("update route set number=? where id=?", new Object[] { entity.getNumber() });
+		jdbcTemplate.update("UPDATE route SET number=?, direction=? WHERE id=?",
+				new Object[] { entity.getNumber(), entity.getDirection() });
 	}
 
 	@Override
 	public void delete(Long id) {
-		jdbcTemplate.update("delete from route where id = ?", new Object[] { id });
+		jdbcTemplate.update("DELETE FROM route WHERE id = ?", new Object[] { id });
 
 	}
 
 	@Override
 	public List<Route> getAll() {
-		return this.jdbcTemplate.query("select * from route", new RouteMapper());
+		return this.jdbcTemplate.query("SELECT * FROM route", new RouteMapper());
 	}
 
 	@Override
-	public List<StopAndRoute> stopsOnRoute(Long id) {
-		List<StopAndRoute> rs = jdbcTemplate.query(
+	public List<PublicTransportStopAndRoute> stopsOnRoute(Long id) {
+		List<PublicTransportStopAndRoute> rs = jdbcTemplate.query(
 				"SELECT stop.stop_name, r.number FROM stop RIGHT JOIN station st ON stop.id = st.stop_id "
 						+ "RIGHT JOIN route r ON st.route_id = r.id WHERE r.id=?",
-				new BeanPropertyRowMapper<StopAndRoute>(StopAndRoute.class));
+				new BeanPropertyRowMapper<PublicTransportStopAndRoute>(PublicTransportStopAndRoute.class));
 		return rs;
 	}
 }

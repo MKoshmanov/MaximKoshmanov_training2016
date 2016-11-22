@@ -25,7 +25,7 @@ public class DriverServiceTest {
 	private JdbcTemplate jdbcTemplate;
 	
 	@Inject
-	private DriverService driverService;
+	private IDriverService driverService;
 	
 	private Driver driverOne = new Driver();
 	private Driver driverTwo = new Driver();
