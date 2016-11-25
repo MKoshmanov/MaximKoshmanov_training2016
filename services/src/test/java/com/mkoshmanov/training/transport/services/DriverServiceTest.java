@@ -53,7 +53,7 @@ public class DriverServiceTest {
 		driverForTest.setFirstName("Sergey");
 		driverForTest.setLastName("Nikolaev");
 		Long id = driverService.save(driverForTest);
-		Driver driverInDataBase = driverService.get(id);
+		Driver driverInDataBase = driverService.getById(id);
 		assertEquals(driverForTest.getId(), driverInDataBase.getId());
 	}
 

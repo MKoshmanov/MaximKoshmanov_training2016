@@ -3,6 +3,7 @@ package com.mkoshmanov.training.transport.daodb.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 import org.springframework.jdbc.core.RowMapper;
 
 import com.mkoshmanov.training.transport.datamodel.Driver;

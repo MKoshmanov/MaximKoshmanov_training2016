@@ -14,7 +14,7 @@ import com.mkoshmanov.training.transport.datamodel.Driver;
 import com.mkoshmanov.training.transport.services.IDriverService;
 
 @Service
-public class DriverServiceImpl implements IDriverService {
+public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDriverService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(DriverServiceImpl.class);
 
@@ -32,7 +32,7 @@ public class DriverServiceImpl implements IDriverService {
 	public Long save(Driver driver) {
 		if (driver.getId() == null) {
 			Long id = driverDao.insert(driver);
-			LOGGER.info("Driver hire. id={}, first_name={}, last_name={}", driver.getId(), driver.getFirstName(),
+			LOGGER.info("Driver hire: id = {}, first name = {}, last name = {}", driver.getId(), driver.getFirstName(),
 					driver.getLastName());
 			return id;
 		} else {
@@ -40,26 +40,10 @@ public class DriverServiceImpl implements IDriverService {
 			return driver.getId();
 		}
 	}
-
-	@Override
-	public Driver get(Long id) {
-		return driverDao.getById(id);
-	}
-	
-	@Override
-	public void delete(Long id) {
-		driverDao.delete(id);
-	}
-
-	@Override
-	public List<Driver> getAll() {
-		return driverDao.getAll();
-	}
-	
+		
 	@Override
 	public List<DriversOnRoute> getDriversOnParticularRoyte (Integer number) {
 		return driverDao.getDriversOnParticularRoute(number);
-		
 	}
 
 	@Override
@@ -71,5 +55,4 @@ public class DriverServiceImpl implements IDriverService {
 	public List<DriversOnRoute> getAllFreeDrivers() {
 		return driverDao.getAllFreeDrivers();
 	}
-
 }

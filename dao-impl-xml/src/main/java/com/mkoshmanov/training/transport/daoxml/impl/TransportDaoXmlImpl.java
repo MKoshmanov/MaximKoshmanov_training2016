@@ -29,7 +29,7 @@ public class TransportDaoXmlImpl implements ITransportDao {
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		
 	}

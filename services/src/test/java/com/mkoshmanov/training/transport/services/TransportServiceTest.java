@@ -95,7 +95,7 @@ public class TransportServiceTest {
 		transportForTest.setDriverId(driverTransportForTest.getId());
 		transportForTest.setRouteId(routeForTest.getId());
 		Long id = transportService.save(transportForTest);
-		Transport transportInDataBase = transportService.get(id);
+		Transport transportInDataBase = transportService.getById(id);
 		assertEquals(transportForTest.getRegistrationNumber(), transportInDataBase.getRegistrationNumber());
 	}
 

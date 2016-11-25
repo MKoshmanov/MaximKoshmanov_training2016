@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface IGenericService<T> {
 
-	T get(Long id);
+	T getById(Long id);
 
 	@Transactional
 	Long save(T entity);
@@ -18,4 +18,5 @@ public interface IGenericService<T> {
 	void delete(Long id);
 	
 	List<T> getAll();
+
 }

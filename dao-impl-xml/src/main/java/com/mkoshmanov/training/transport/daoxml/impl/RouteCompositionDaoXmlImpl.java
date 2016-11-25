@@ -30,7 +30,7 @@ public class RouteCompositionDaoXmlImpl implements IRouteCompositionDao {
 	}
 
 	@Override
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -14,7 +14,7 @@ import com.mkoshmanov.training.transport.datamodel.RouteComposition;
 import com.mkoshmanov.training.transport.services.IRouteCompositionService;
 
 @Service
-public class RouteCompositionServiceImpl implements IRouteCompositionService {
+public class RouteCompositionServiceImpl extends GenericServiceImpl<RouteComposition> implements IRouteCompositionService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RouteCompositionServiceImpl.class);
 
@@ -32,7 +32,7 @@ public class RouteCompositionServiceImpl implements IRouteCompositionService {
 	public Long save(RouteComposition routeComposition) {
 		if (routeComposition.getId() == null) {
 			Long id = routeCompositionDao.insert(routeComposition);
-			LOGGER.info("Route composition. id={}, route_id={}, public_transport_stop={}, sequence={}",
+			LOGGER.info("Route composition: id = {}, route id = {}, public transport stop = {}, sequence = {}",
 					routeComposition.getId(), routeComposition.getRouteId(),
 					routeComposition.getPublicTransportStopId(), routeComposition.getSequence());
 			return id;
@@ -43,24 +43,7 @@ public class RouteCompositionServiceImpl implements IRouteCompositionService {
 	}
 
 	@Override
-	public RouteComposition get(Long id) {
-		return routeCompositionDao.getById(id);
-	}
-
-	@Override
-	public List<RouteComposition> getAll() {
-		return routeCompositionDao.getAll();
-	}
-
-	@Override
-	public void delete(Long id) {
-		routeCompositionDao.delete(id);
-
-	}
-
-	@Override
 	public List<PublicTransportStopAndRoute> routesThroughStop(Long id) {
 		return routeCompositionDao.countRoutesThroughStop(id);
 	}
-
 }

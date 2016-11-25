@@ -8,4 +8,5 @@ import com.mkoshmanov.training.transport.datamodel.RouteComposition;
 public interface IRouteCompositionDao extends IGenericDao<RouteComposition> {
 
 	List<PublicTransportStopAndRoute> countRoutesThroughStop(Long id);
+
 }

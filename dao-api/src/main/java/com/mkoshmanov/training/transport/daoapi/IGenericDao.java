@@ -3,7 +3,7 @@ package com.mkoshmanov.training.transport.daoapi;
 
 import java.util.List;
 
-interface IGenericDao<T> {
+public interface IGenericDao<T> {
 	
 	T getById(Long id);
 
@@ -11,7 +11,8 @@ interface IGenericDao<T> {
 
 	void update(T entity);
 
-	void delete(Long id);
+	void deleteById(Long id);
 
 	List<T> getAll();
+
 }

@@ -43,20 +43,18 @@ public class DriverDaoXmlImpl implements IDriverDao {
 	private List<Driver> readCollection() {
 		return (List<Driver>) xstream.fromXML(file);
 	}
-	
+
 	private void writeCollection(List<Driver> newList) {
-        try {
-            xstream.toXML(newList, new FileOutputStream(file));
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);// TODO custom exception
-        }
-    }
+		try {
+			xstream.toXML(newList, new FileOutputStream(file));
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);// TODO custom exception
+		}
+	}
 
-    private long getNextId(List<Driver> allDrivers) {
-        return allDrivers.isEmpty() ? 1l : allDrivers.get(
-                allDrivers.size() - 1).getId() + 1;
-    }
-
+	private long getNextId(List<Driver> allDrivers) {
+		return allDrivers.isEmpty() ? 1l : allDrivers.get(allDrivers.size() - 1).getId() + 1;
+	}
 
 	@Override
 	public Driver getById(Long id) {
@@ -73,14 +71,14 @@ public class DriverDaoXmlImpl implements IDriverDao {
 	@Override
 	public Long insert(Driver entity) {
 		List<Driver> allDrivers = readCollection();
-        Long id = getNextId(allDrivers);
+		Long id = getNextId(allDrivers);
 
-        allDrivers.add(entity);
+		allDrivers.add(entity);
 
-        entity.setId(new Long(id));
+		entity.setId(new Long(id));
 
-        writeCollection(allDrivers);
-        return id;
+		writeCollection(allDrivers);
+		return id;
 	}
 
 	@Override
@@ -90,17 +88,17 @@ public class DriverDaoXmlImpl implements IDriverDao {
 	}
 
 	@Override
-	public void delete(Long id) {
-		 List<Driver> allDrivers = readCollection();
+	public void deleteById(Long id) {
+		List<Driver> allDrivers = readCollection();
 
-	        List<Driver> newList = new ArrayList<>();
-	        // TODO: don't iterate whole collection
-	        for (Driver driver : allDrivers) {
-	            if (!driver.getId().equals(id)) {
-	                newList.add(driver);
-	            }
-	        }
-	        writeCollection(newList);
+		List<Driver> newList = new ArrayList<>();
+		// TODO: don't iterate whole collection
+		for (Driver driver : allDrivers) {
+			if (!driver.getId().equals(id)) {
+				newList.add(driver);
+			}
+		}
+		writeCollection(newList);
 
 	}
 

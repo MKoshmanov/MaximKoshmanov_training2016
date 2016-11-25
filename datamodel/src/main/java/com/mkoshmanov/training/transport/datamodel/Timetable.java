@@ -2,6 +2,9 @@ package com.mkoshmanov.training.transport.datamodel;
 
 import java.sql.Time;
 
+import com.mkoshmanov.training.transport.datamodel.utils.Table;
+
+@Table(name = "timetable")
 public class Timetable extends AbstractModel {
 
 	private Integer publicTransportStopId;

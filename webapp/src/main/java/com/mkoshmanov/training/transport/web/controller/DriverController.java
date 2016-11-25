@@ -40,7 +40,7 @@ public class DriverController {
     @RequestMapping(value = "/{driverId}", method = RequestMethod.GET)
     public ResponseEntity<DriverModel> getById(
             @PathVariable Long driverId) {
-    	Driver driver = service.get(driverId);
+    	Driver driver = service.getById(driverId);
         return new ResponseEntity<DriverModel>(entity2model(driver),
                 HttpStatus.OK);
     }
@@ -61,7 +61,6 @@ public class DriverController {
         driver.setId(driverId);
         service.save(driver);
         return new ResponseEntity<Void>(HttpStatus.OK);
-
     }
 
     @RequestMapping(value = "/{driverId}", method = RequestMethod.DELETE)

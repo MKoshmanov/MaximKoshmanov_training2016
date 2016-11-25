@@ -14,7 +14,7 @@ import com.mkoshmanov.training.transport.datamodel.Route;
 import com.mkoshmanov.training.transport.services.IRouteService;
 
 @Service
-public class RouteServiceImpl implements IRouteService {
+public class RouteServiceImpl extends GenericServiceImpl<Route> implements IRouteService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RouteServiceImpl.class);
 
@@ -32,7 +32,7 @@ public class RouteServiceImpl implements IRouteService {
 	public Long save(Route route) {
 		if (route.getId() == null) {
 			Long id = routeDao.insert(route);
-			LOGGER.info("New route created. id={}, number={}, direction={}", route.getId(), route.getNumber(), route.getDirection());
+			LOGGER.info("New route created: id = {}, number = {}, direction = {}", route.getId(), route.getNumber(), route.getDirection());
 			return id;
 		} else {
 			routeDao.update(route);
@@ -41,24 +41,7 @@ public class RouteServiceImpl implements IRouteService {
 	}
 
 	@Override
-	public Route get(Long id) {
-		return routeDao.getById(id);
-	}
-
-	@Override
-	public List<Route> getAll() {
-		return routeDao.getAll();
-	}
-
-	@Override
-	public void delete(Long id) {
-		routeDao.delete(id);
-
-	}
-
-	@Override
 	public List<PublicTransportStopAndRoute> stopsOnRoute(Long id) {
 		return routeDao.stopsOnRoute(id);
 	}
-
 }

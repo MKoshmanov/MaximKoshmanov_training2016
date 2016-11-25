@@ -13,7 +13,7 @@ import com.mkoshmanov.training.transport.datamodel.Transport;
 import com.mkoshmanov.training.transport.services.ITransportService;
 
 @Service
-public class TransportServiceImpl implements ITransportService {
+public class TransportServiceImpl extends GenericServiceImpl<Transport> implements ITransportService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(TransportServiceImpl.class);
 
@@ -31,7 +31,7 @@ public class TransportServiceImpl implements ITransportService {
 	public Long save(Transport transport) {
 		if (transport.getId() == null) {
 			Long id = transportDao.insert(transport);
-			LOGGER.info("Ready new transport. id={}, type={}, registration_number={}, driver_id={}, route_id={}",
+			LOGGER.info("Ready new transport: id = {}, type = {}, registration number = {}, driver id = {}, route id = {}",
 					transport.getId(), transport.getType(), transport.getRegistrationNumber(), transport.getDriverId(),
 					transport.getRouteId());
 			return id;
@@ -40,20 +40,4 @@ public class TransportServiceImpl implements ITransportService {
 			return transport.getId();
 		}
 	}
-
-	@Override
-	public Transport get(Long id) {
-		return transportDao.getById(id);
-	}
-
-	@Override
-	public void delete(Long id) {
-		transportDao.delete(id);
-	}
-
-	@Override
-	public List<Transport> getAll() {
-		return transportDao.getAll();
-	}
-
 }
