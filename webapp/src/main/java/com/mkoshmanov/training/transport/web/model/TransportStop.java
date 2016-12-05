@@ -4,7 +4,6 @@ public class TransportStop {
 
 	private Long id;
 	private String name;
-	private String district;
 
 	public Long getId() {
 		return id;
@@ -22,17 +21,8 @@ public class TransportStop {
 		this.name = name;
 	}
 
-	public String getDistrict() {
-		return district;
-	}
-
-	public void setDistrict(String district) {
-		this.district = district;
-	}
-
 	@Override
 	public String toString() {
-		return "TransportStop [id=" + id + ", name=" + name + ", district=" + district + "]";
+		return "TransportStop [id=" + id + ", name=" + name + "]";
 	}
-
 }

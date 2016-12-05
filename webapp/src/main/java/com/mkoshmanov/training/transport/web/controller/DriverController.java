@@ -20,7 +20,7 @@ import com.mkoshmanov.training.transport.services.components.UserDataStorage;
 import com.mkoshmanov.training.transport.web.model.DriverModel;
 
 @RestController
-@RequestMapping("/drivers")
+@RequestMapping("/driver")
 public class DriverController {
 
 	@Inject
@@ -39,7 +39,6 @@ public class DriverController {
 		for (Driver driver : drivers) {
 			converted.add(entity2model(driver));
 		}
-
 		return new ResponseEntity<List<DriverModel>>(converted, HttpStatus.OK);
 	}
 
@@ -53,7 +52,6 @@ public class DriverController {
 	public ResponseEntity<Void> createNewDriver(@RequestBody DriverModel driverModel) {
 		service.save(model2entity(driverModel));
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
-
 	}
 
 	@RequestMapping(value = "/{driverId}", method = RequestMethod.PUT)
@@ -85,5 +83,4 @@ public class DriverController {
 		e.setLastName(driverModel.getLastName());
 		return e;
 	}
-
 }
