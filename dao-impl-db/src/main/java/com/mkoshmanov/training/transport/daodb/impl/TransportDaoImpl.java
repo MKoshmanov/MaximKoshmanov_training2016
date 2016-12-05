@@ -15,10 +15,10 @@ import com.mkoshmanov.training.transport.datamodel.Transport;
 @Repository
 public class TransportDaoImpl extends GenericDaoImpl<Transport> implements ITransportDao {
 
-	private static final String SQL_INSERT = "INSERT INTO transport (type, registration_number, driver_id, "
+	private static final String SQL_INSERT = "INSERT INTO transport (vehicle_type, driver_id, "
 			+ "route_id) values (?, ?, ?, ?)";
 
-	private static final String SQL_UPDATE = "UPDATE transport SET  type=?, registrationNumber=?, driver_id=?, "
+	private static final String SQL_UPDATE = "UPDATE transport SET  vehicle_type=?, driver_id=?, "
 			+ "route_id=? WHERE id=?";
 
 	@Override
@@ -33,10 +33,9 @@ public class TransportDaoImpl extends GenericDaoImpl<Transport> implements ITran
 			@Override
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 				PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
-				ps.setString(1, entity.getType());
-				ps.setString(2, entity.getRegistrationNumber());
-				ps.setLong(3, entity.getDriverId());
-				ps.setLong(4, entity.getRouteId());
+				ps.setString(1, entity.getVehicleType());
+				ps.setLong(2, entity.getDriverId());
+				ps.setLong(3, entity.getRouteId());
 				return ps;
 			}
 		}, keyHolder);
@@ -46,7 +45,7 @@ public class TransportDaoImpl extends GenericDaoImpl<Transport> implements ITran
 
 	@Override
 	public void update(Transport entity) {
-		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getType(), entity.getRegistrationNumber(),
+		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getVehicleType(), 
 				entity.getDriverId(), entity.getRouteId(), entity.getId() });
 	}
 }

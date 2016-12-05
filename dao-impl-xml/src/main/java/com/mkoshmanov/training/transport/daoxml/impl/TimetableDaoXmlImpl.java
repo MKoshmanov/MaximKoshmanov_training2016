@@ -8,37 +8,27 @@ import com.mkoshmanov.training.transport.daoapi.ITimetableDao;
 import com.mkoshmanov.training.transport.datamodel.Timetable;
 
 @Repository
-public class TimetableDaoXmlImpl implements ITimetableDao {
+public class TimetableDaoXmlImpl extends GenericDaoXxlImpl<Timetable> implements ITimetableDao {
 
 	@Override
-	public Timetable getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Long insert(Timetable entity) {
-		// TODO Auto-generated method stub
-		return null;
+	public Class<Timetable> getClassName() {
+		return Timetable.class;
 	}
 
 	@Override
 	public void update(Timetable entity) {
-		// TODO Auto-generated method stub
-		
+		List<Timetable> timetables = readCollection();
+		for (Timetable timetable : timetables) {
+			if (timetable.getId().equals(entity.getId())) {
+				timetable.setTransportStopId(entity.getTransportStopId());
+				timetable.setRouteId(entity.getRouteId());
+				timetable.setArrivalTime(entity.getArrivalTime());
+				break;
+			}
+			else {
+				insert(entity);
+			}
+		}
+		writeCollection(timetables);
 	}
-
-	@Override
-	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<Timetable> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
 }

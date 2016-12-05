@@ -1,6 +1,7 @@
 package com.mkoshmanov.training.transport.daodb.impl;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -18,12 +19,12 @@ import com.mkoshmanov.training.transport.datamodel.Driver;
 @Repository
 public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao {
 
-	private static final String SQL_INSERT = "INSERT INTO driver (first_name, last_name) VALUES (?, ?)";
+	private static final String SQL_INSERT = "INSERT INTO driver (first_name, last_name, birthday, license_category) VALUES (?, ?, ?, ?)";
 
-	private static final String SQL_UPDATE = "UPDATE driver SET first_name=?, last_name=? WHERE id=?";
+	private static final String SQL_UPDATE = "UPDATE driver SET first_name=?, last_name=?, birthday=?, license_category=?  WHERE id=?";
 
-	private static final String SQL_GET_DRIVERS_ON_PARTICULAR_ROUTE = "SELECT d.first_name, d.last_name, "
-			+ "r.number, r.direction FROM driver d RIGHT JOIN transport t ON t.driver_id = "
+	private static final String SQL_GET_DRIVERS_ON_PARTICULAR_ROUTE = "SELECT d.first_name, d.last_name, d.birthday, "
+			+ "r.number, r.name FROM driver d RIGHT JOIN transport t ON t.driver_id = "
 			+ "d.id RIGHT JOIN route r ON r.id = t.route_id WHERE r.number = ?";
 
 	private static final String SQL_GET_ALL_FREE_DRIVERS = "SELECT driver FROM driver EXCEPT "
@@ -31,7 +32,7 @@ public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao 
 
 	private static final String SQL_GET_ALL_BUSY_DRIVERS = "SELECT driver FROM driver, transport "
 			+ "WHERE transport.driver_id = driver.id";
-	
+
 	@Override
 	public Class<Driver> getClassName() {
 		return Driver.class;
@@ -46,6 +47,8 @@ public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao 
 				PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
 				ps.setString(1, entity.getFirstName());
 				ps.setString(2, entity.getLastName());
+				ps.setDate(3, (Date) entity.getBirthday());
+				ps.setString(4, entity.getLicenceCategory());
 				return ps;
 			}
 		}, keyHolder);
@@ -55,7 +58,8 @@ public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao 
 
 	@Override
 	public void update(Driver entity) {
-		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getFirstName(), entity.getLastName(), entity.getId() });
+		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getFirstName(), entity.getLastName(),
+				entity.getBirthday(), entity.getLicenceCategory(), entity.getId() });
 	}
 
 	@Override

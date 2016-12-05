@@ -4,9 +4,9 @@ import com.mkoshmanov.training.transport.datamodel.utils.Table;
 
 @Table(name = "route")
 public class Route extends AbstractModel {
-	
+
 	private Integer number;
-	private String direction;
+	private String name;
 	
 	public Integer getNumber() {
 		return number;
@@ -15,19 +15,17 @@ public class Route extends AbstractModel {
 	public void setNumber(Integer number) {
 		this.number = number;
 	}
-	
-	public String getDirection() {
-		return direction;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setDirection(String direction) {
-		this.direction = direction;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	@Override
 	public String toString() {
-		return "Route [number=" + number + ", direction=" + direction + ", getId()=" + getId() + "]";
+		return "Route [number=" + number + ", name=" + name + ", getId()=" + getId() + "]";
 	}
-
-	
 }

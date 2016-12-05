@@ -9,23 +9,23 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import com.mkoshmanov.training.transport.daoapi.IPublicTransportStopDao;
-import com.mkoshmanov.training.transport.datamodel.PublicTransportStop;
+import com.mkoshmanov.training.transport.daoapi.ITransportStopDao;
+import com.mkoshmanov.training.transport.datamodel.TransportStop;
 
 @Repository
-public class PublicTransportStopDaoImpl extends GenericDaoImpl<PublicTransportStop> implements IPublicTransportStopDao{
+public class TransportStopDaoImpl extends GenericDaoImpl<TransportStop> implements ITransportStopDao{
 
-	private static final String SQL_INSERT = "INSERT INTO public_transport_stop (name) VALUES (?)";
+	private static final String SQL_INSERT = "INSERT INTO transport_stop (name) VALUES (?)";
 
-	private static final String SQL_UPDATE = "UPDATE public_transport_stop SET name=?, WHERE id=?";
+	private static final String SQL_UPDATE = "UPDATE transport_stop SET name=? WHERE id=?";
 	
 	@Override
-	public Class<PublicTransportStop> getClassName() {
-		return PublicTransportStop.class;
+	public Class<TransportStop> getClassName() {
+		return TransportStop.class;
 	}
 	
 	@Override
-	public Long insert(final PublicTransportStop entity) {
+	public Long insert(final TransportStop entity) {
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
@@ -40,7 +40,7 @@ public class PublicTransportStopDaoImpl extends GenericDaoImpl<PublicTransportSt
 	}
 
 	@Override
-	public void update(PublicTransportStop entity) {
+	public void update(TransportStop entity) {
 		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getName(), entity.getId() });
 	}
 }

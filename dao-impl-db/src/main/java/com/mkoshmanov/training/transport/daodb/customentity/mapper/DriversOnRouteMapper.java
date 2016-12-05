@@ -15,20 +15,21 @@ public class DriversOnRouteMapper implements RowMapper<DriversOnRoute> {
 	public DriversOnRoute mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Driver driver = new Driver();
 		driver.setId(rs.getLong("id"));
-		driver.setFirstName(rs.getString("first_name"));
-		driver.setLastName(rs.getString("last_name"));
+		driver.setFirstName(rs.getString("firstName"));
+		driver.setLastName(rs.getString("lastName"));
+		driver.setBirthday(rs.getDate("birthday"));
+		driver.setLicenceCategory(rs.getString("licenceCategory"));
 
 		Route route = new Route();
 		route.setId(rs.getLong("id"));
 		route.setNumber(rs.getInt("number"));
-		route.setDirection(rs.getString("direction"));
+		route.setName(rs.getString("name"));
 				
 		Transport transport = new Transport();
 		transport.setId(rs.getLong("id"));
-		transport.setType(rs.getString("type"));
-		transport.setRegistrationNumber(rs.getString("registration_number"));
-		transport.setDriverId(rs.getLong("driver_id"));
-		transport.setRouteId(rs.getLong("route_id"));
+		transport.setVehicleType(rs.getString("vehocleType"));
+		transport.setDriverId(rs.getLong("driverId"));
+		transport.setRouteId(rs.getLong("routeId"));
 		
 		DriversOnRoute driversOnRoute = new DriversOnRoute();
 		driversOnRoute.setDriver(driver);

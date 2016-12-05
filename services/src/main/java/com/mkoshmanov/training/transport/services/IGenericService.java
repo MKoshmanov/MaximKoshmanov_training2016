@@ -18,5 +18,8 @@ public interface IGenericService<T> {
 	void delete(Long id);
 	
 	List<T> getAll();
+	
+	@Transactional
+	void update(T entity);
 
 }

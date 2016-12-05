@@ -29,4 +29,9 @@ public abstract class GenericServiceImpl<T> implements IGenericService<T> {
 	public List<T> getAll() {
 		return genericDao.getAll();
 	}
+	
+	@Override
+	public void update(T entity){
+		genericDao.update(entity);
+	}
 }

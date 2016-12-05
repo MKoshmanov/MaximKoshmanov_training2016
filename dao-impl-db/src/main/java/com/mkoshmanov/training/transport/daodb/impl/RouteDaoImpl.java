@@ -12,19 +12,19 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daoapi.IRouteDao;
-import com.mkoshmanov.training.transport.daodb.customentity.PublicTransportStopAndRoute;
+import com.mkoshmanov.training.transport.daodb.customentity.TransportStopAndRoute;
 import com.mkoshmanov.training.transport.datamodel.Route;
 
 @Repository
 public class RouteDaoImpl extends GenericDaoImpl<Route> implements IRouteDao {
 
-	private static final String SQL_INSERT = "INSERT INTO route (number, direction) VALUES (?, ?)";
+	private static final String SQL_INSERT = "INSERT INTO route (number, name) VALUES (?, ?)";
 
-	private static final String SQL_UPDATE = "UPDATE route SET number=?, direction=? WHERE id=?";
+	private static final String SQL_UPDATE = "UPDATE route SET number=?, name=? WHERE id=?";
 
-	private static final String SQL_STOPS_ON_ROUTE = "SELECT stop.stop_name, r.number FROM stop "
-			+ "RIGHT JOIN station st ON stop.id = st.stop_id "
-			+ "RIGHT JOIN route r ON st.route_id = r.id WHERE r.id=?";
+	private static final String SQL_STOPS_ON_ROUTE = "SELECT ts.name, r.number FROM transport_stop ts "
+			+ "RIGHT JOIN route_2_stop r2s ON ts.id = r2s.transport_stop_id "
+			+ "RIGHT JOIN route r ON r2s.route_id = r.id WHERE r.id=?";
 
 	@Override
 	public Class<Route> getClassName() {
@@ -39,7 +39,7 @@ public class RouteDaoImpl extends GenericDaoImpl<Route> implements IRouteDao {
 			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 				PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
 				ps.setInt(1, entity.getNumber());
-				ps.setString(2, entity.getDirection());
+				ps.setString(2, entity.getName());
 				return ps;
 			}
 		}, keyHolder);
@@ -49,13 +49,13 @@ public class RouteDaoImpl extends GenericDaoImpl<Route> implements IRouteDao {
 
 	@Override
 	public void update(Route entity) {
-		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getNumber(), entity.getDirection(), entity.getId() });
+		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getNumber(), entity.getName(), entity.getId() });
 	}
 
 	@Override
-	public List<PublicTransportStopAndRoute> stopsOnRoute(Long id) {
-		List<PublicTransportStopAndRoute> rs = jdbcTemplate.query(SQL_STOPS_ON_ROUTE,
-				new BeanPropertyRowMapper<PublicTransportStopAndRoute>(PublicTransportStopAndRoute.class));
+	public List<TransportStopAndRoute> stopsOnRoute(Long id) {
+		List<TransportStopAndRoute> rs = jdbcTemplate.query(SQL_STOPS_ON_ROUTE,
+				new BeanPropertyRowMapper<TransportStopAndRoute>(TransportStopAndRoute.class));
 		return rs;
 	}
 }

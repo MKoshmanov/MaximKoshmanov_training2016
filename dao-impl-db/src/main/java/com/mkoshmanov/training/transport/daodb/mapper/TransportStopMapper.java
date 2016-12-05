@@ -5,15 +5,15 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.mkoshmanov.training.transport.datamodel.PublicTransportStop;
+import com.mkoshmanov.training.transport.datamodel.TransportStop;
 
-public class PublicTransportStopMapper implements RowMapper<PublicTransportStop> {
+public class TransportStopMapper implements RowMapper<TransportStop> {
 
 	@Override
-	public PublicTransportStop mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public TransportStop mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Long id = rs.getLong("id");
 		String name = rs.getString("name");
-		PublicTransportStop entity = new PublicTransportStop();
+		TransportStop entity = new TransportStop();
 		entity.setId(id);
 		entity.setName(name);
 		return entity;

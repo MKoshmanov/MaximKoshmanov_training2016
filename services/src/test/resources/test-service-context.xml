@@ -16,14 +16,14 @@
 
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.mkoshmanov.training.transport.daodb.impl" />
-	<context:component-scan base-package="com.mkoshmanov.training.transport.services.impl" />
+	<import resource="classpath:db-dao-beans.xml" />
+	<!--<import resource="classpath:xml-dao-beans.xml" /> -->
 
+	<context:component-scan
+		base-package="com.mkoshmanov.training.transport.services.impl" />
 
 	<context:property-placeholder
 		ignore-unresolvable="true" location="classpath:test-db.properties" />
-
-
 
 	<!-- Initialization for data source -->
 	<bean id="dataSource"
@@ -41,13 +41,15 @@
 		<constructor-arg ref="dataSource" />
 	</bean>
 
-
 	<tx:annotation-driven />
-	
+
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+	<task:annotation-driven />
+	<context:component-scan
+		base-package="com.mkoshmanov.training.transport.services.components" />
 
 </beans>

@@ -5,6 +5,21 @@
 
 	<display-name>myproject</display-name>
 
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>classpath:service-context.xml</param-value>
+	</context-param>
+
+	<listener>
+   		<listener-class>
+        org.springframework.web.context.ContextLoaderListener
+   		</listener-class>
+	</listener> 
+	
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener>
+
 	<servlet>
 		<servlet-name>ServletExample</servlet-name>
 		<servlet-class>com.mkoshmanov.training.transport.web.servlets.ServletExample</servlet-class>
@@ -31,13 +46,23 @@
 	</servlet-mapping>
 
 	<filter>
-		<filter-name>LogFilter</filter-name>
-		<filter-class>com.mkoshmanov.training.transport.web.servlets.LogFilter</filter-class>
+	   <filter-name>BasicAuthFilter</filter-name>
+	   <filter-class>com.mkoshmanov.training.transport.web.servlets.BasicAuthFilter</filter-class>
+	</filter>
+	
+	<filter>
+		<filter-name>requestContextFilter</filter-name>
+		<filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
 	</filter>
 
 	<filter-mapping>
-		<filter-name>LogFilter</filter-name>
-		<url-pattern>/</url-pattern>
+	   <filter-name>BasicAuthFilter</filter-name>
+	   <url-pattern>/basicAuthSecured/*</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+		<filter-name>requestContextFilter</filter-name>
+		<servlet-name>/</servlet-name>
 	</filter-mapping>
 
 </web-app>

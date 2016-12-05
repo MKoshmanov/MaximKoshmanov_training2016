@@ -31,8 +31,8 @@ public class TransportServiceImpl extends GenericServiceImpl<Transport> implemen
 	public Long save(Transport transport) {
 		if (transport.getId() == null) {
 			Long id = transportDao.insert(transport);
-			LOGGER.info("Ready new transport: id = {}, type = {}, registration number = {}, driver id = {}, route id = {}",
-					transport.getId(), transport.getType(), transport.getRegistrationNumber(), transport.getDriverId(),
+			LOGGER.info("Transport: id = {}, vehicle type = {}, driver id = {}, route id = {}",
+					transport.getId(), transport.getVehicleType(), transport.getDriverId(),
 					transport.getRouteId());
 			return id;
 		} else {

@@ -13,12 +13,11 @@ public class RouteMapper implements RowMapper<Route> {
 	public Route mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Long id = rs.getLong("id");
 		Integer number = rs.getInt("number");
-		String direction = rs.getString("direction");
+		String name = rs.getString("name");
 		Route entity = new Route();
 		entity.setId(id);
 		entity.setNumber(number);
-		entity.setDirection(direction);
+		entity.setName(name);
 		return entity;
 	}
-
 }

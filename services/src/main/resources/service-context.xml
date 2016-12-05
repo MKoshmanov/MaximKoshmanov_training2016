@@ -16,7 +16,6 @@
 
 	<context:annotation-config />
 
-
 	<import resource="classpath:db-dao-beans.xml" />
 	<!--<import resource="classpath:xml-dao-beans.xml" /> -->
 
@@ -25,8 +24,6 @@
 
 	<context:property-placeholder
 		ignore-unresolvable="true" location="classpath:db.properties" />
-
-
 
 	<!-- Initialization for data source -->
 	<bean id="dataSource"
@@ -44,7 +41,6 @@
 		<constructor-arg ref="dataSource" />
 	</bean>
 
-
 	<tx:annotation-driven />
 
 	<bean id="transactionManager"
@@ -53,5 +49,5 @@
 	</bean>
 
 	<task:annotation-driven />
-
+	<context:component-scan base-package="com.mkoshmanov.training.transport.services.components" />
 </beans>

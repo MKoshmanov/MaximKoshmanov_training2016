@@ -49,7 +49,7 @@ public class TransportServiceTest {
 	public void setUp() {
 		
 		routeForTest.setNumber(1);
-		routeForTest.setDirection("From A to B");
+		routeForTest.setName("From A to B");
 		routeService.saveAll(Arrays.asList(routeForTest));
 		
 		driverForTransportOne.setFirstName("Ivan");
@@ -60,16 +60,13 @@ public class TransportServiceTest {
 		driverForTransportThree.setLastName("Vasechkin");
 		driverService.saveAll(Arrays.asList(driverForTransportOne, driverForTransportTwo, driverForTransportThree));
 
-		transportOne.setType("usual");
-		transportOne.setRegistrationNumber("AE 0001-4");
+		transportOne.setVehicleType("usual");
 		transportOne.setDriverId(driverForTransportOne.getId());
 		transportOne.setRouteId(routeForTest.getId());
-		transportTwo.setType("usual");
-		transportTwo.setRegistrationNumber("AE 0002-4");
+		transportTwo.setVehicleType("usual");
 		transportTwo.setDriverId(driverForTransportTwo.getId());
 		transportTwo.setRouteId(routeForTest.getId());
-		transportThree.setType("usual");
-		transportThree.setRegistrationNumber("AE 0003-4");
+		transportThree.setVehicleType("usual");
 		transportThree.setDriverId(driverForTransportThree.getId());
 		transportThree.setRouteId(routeForTest.getId());
 		transportService.saveAll(Arrays.asList(transportOne, transportTwo, transportThree));
@@ -84,19 +81,19 @@ public class TransportServiceTest {
 	}
 
 	@Test
-	public void shouldSaveTransportAndRetutnByRegistrationNumber() {
+	public void shouldSaveTransportAndRetutnById() {
 		Driver driverTransportForTest = new Driver();
 		driverTransportForTest.setFirstName("Igor");
 		driverTransportForTest.setLastName("Muhin");
 		driverService.save(driverTransportForTest);
 		Transport transportForTest = new Transport();
-		transportForTest.setType("usual");
-		transportForTest.setRegistrationNumber("AE- 0011-4");
+		transportForTest.setVehicleType("usual");
+		
 		transportForTest.setDriverId(driverTransportForTest.getId());
 		transportForTest.setRouteId(routeForTest.getId());
 		Long id = transportService.save(transportForTest);
 		Transport transportInDataBase = transportService.getById(id);
-		assertEquals(transportForTest.getRegistrationNumber(), transportInDataBase.getRegistrationNumber());
+		assertEquals(transportForTest.getId(), transportInDataBase.getId());
 	}
 
 	@Test

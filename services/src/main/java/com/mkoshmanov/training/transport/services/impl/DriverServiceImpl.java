@@ -20,6 +20,7 @@ public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDr
 
 	@Inject
 	private IDriverDao driverDao;
+
 	
 	@Override
 	public void saveAll(List<Driver> drivers) {
@@ -32,17 +33,19 @@ public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDr
 	public Long save(Driver driver) {
 		if (driver.getId() == null) {
 			Long id = driverDao.insert(driver);
-			LOGGER.info("Driver hire: id = {}, first name = {}, last name = {}", driver.getId(), driver.getFirstName(),
-					driver.getLastName());
+			LOGGER.info(
+					"Driver hire: id = {}, first name = {}, last name = {}, birthday = {}, driving license category = {}",
+					driver.getId(), driver.getFirstName(), driver.getLastName(), driver.getBirthday(),
+					driver.getLicenceCategory());
 			return id;
 		} else {
 			driverDao.update(driver);
 			return driver.getId();
 		}
 	}
-		
+
 	@Override
-	public List<DriversOnRoute> getDriversOnParticularRoyte (Integer number) {
+	public List<DriversOnRoute> getDriversOnParticularRoyte(Integer number) {
 		return driverDao.getDriversOnParticularRoute(number);
 	}
 

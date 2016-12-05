@@ -7,17 +7,16 @@ import com.mkoshmanov.training.transport.datamodel.utils.Table;
 @Table(name = "timetable")
 public class Timetable extends AbstractModel {
 
-	private Integer publicTransportStopId;
+	private Integer transportStopId;
 	private Integer routeId;
-	private String vehicle;
-	private Time arriveTime;
+	private Time arrivalTime;
 
-	public Integer getPublicTransportStopId() {
-		return publicTransportStopId;
+	public Integer getTransportStopId() {
+		return transportStopId;
 	}
 
-	public void setPublicTransportStopId(Integer publicTransportStopId) {
-		this.publicTransportStopId = publicTransportStopId;
+	public void setTransportStopId(Integer transportStopId) {
+		this.transportStopId = transportStopId;
 	}
 
 	public Integer getRouteId() {
@@ -28,26 +27,18 @@ public class Timetable extends AbstractModel {
 		this.routeId = routeId;
 	}
 
-	public String getVehicle() {
-		return vehicle;
+	public Time getArrivalTime() {
+		return arrivalTime;
 	}
 
-	public void setVehicle(String vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Time getArriveTime() {
-		return arriveTime;
-	}
-
-	public void setArriveTime(Time arriveTime) {
-		this.arriveTime = arriveTime;
+	public void setArrivalTime(Time arrivalTime) {
+		this.arrivalTime = arrivalTime;
 	}
 
 	@Override
 	public String toString() {
-		return "Timetable [publicTransportStopId=" + publicTransportStopId + ", routeId=" + routeId + ", vehicle="
-				+ vehicle + ", arriveTime=" + arriveTime + ", getId()=" + getId() + "]";
+		return "Timetable [transportStopId=" + transportStopId + ", routeId=" + routeId + ", arrivalTime=" + arrivalTime
+				+ ", getId()=" + getId() + "]";
 	}
 
 }
