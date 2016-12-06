@@ -15,6 +15,11 @@ public class RouteDaoXmlImpl extends GenericDaoXxlImpl<Route> implements IRouteD
 	public Class<Route> getClassName() {
 		return Route.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Route.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public void update(Route entity) {

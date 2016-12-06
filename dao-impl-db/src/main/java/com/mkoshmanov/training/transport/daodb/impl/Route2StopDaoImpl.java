@@ -31,6 +31,11 @@ public class Route2StopDaoImpl extends GenericDaoImpl<Route2Stop> implements IRo
 	public Class<Route2Stop> getClassName() {
 		return Route2Stop.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Route2Stop.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public Long insert(final Route2Stop entity) {

@@ -1,4 +1,4 @@
--- create routes for bus 
+﻿-- create routes for bus 
 INSERT INTO route (number, name) VALUES (1, 'Вишневец – Механический завод');
 INSERT INTO route (number, name) VALUES (1, 'Механический завод - Вишневец');
 INSERT INTO route (number, name) VALUES (2, 'ул.Победы – Девятовка-5');
@@ -744,6 +744,14 @@ DELETE FROM route WHERE id = 21;
 DELETE FROM route WHERE id = 22;
 DELETE FROM route WHERE id = 17;
 DELETE FROM route WHERE id = 18;
+DELETE FROM route_2_stop WHERE route_id = 7;
+DELETE FROM route_2_stop WHERE route_id = 8;
+DELETE FROM route_2_stop WHERE route_id = 9;
+DELETE FROM route_2_stop WHERE route_id = 10;
+DELETE FROM route WHERE id = 7;
+DELETE FROM route WHERE id = 8;
+DELETE FROM route WHERE id = 9;
+DELETE FROM route WHERE id = 10;
 DELETE FROM transport_stop WHERE id = 7; 
 DELETE FROM transport_stop WHERE id = 10;
 DELETE FROM transport_stop WHERE id = 11;

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mkoshmanov.training.transport.services.components.UserDataStorage;
-import com.mkoshmanov.training.transport.web.model.DriverModel;
+import com.mkoshmanov.training.transport.web.model.DriverDTO;
 
 @RestController
 @RequestMapping("/basicAuthSecured")
@@ -22,10 +22,10 @@ public class SampleController {
     private ApplicationContext context;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<List<DriverModel>> getAll() {
+    public ResponseEntity<List<DriverDTO>> getAll() {
         UserDataStorage userDataStorage = context.getBean(UserDataStorage.class);
         System.out.println("SampleController:" + userDataStorage);
-        return new ResponseEntity<List<DriverModel>>(new ArrayList<>(), HttpStatus.OK);
+        return new ResponseEntity<List<DriverDTO>>(new ArrayList<>(), HttpStatus.OK);
     }
 
 }

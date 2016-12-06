@@ -1,8 +1,5 @@
 package com.mkoshmanov.training.transport.datamodel;
 
-import com.mkoshmanov.training.transport.datamodel.utils.Table;
-
-@Table(name = "route_2_stop")
 public class Route2Stop extends AbstractModel {
 
 	private Integer transportStopId;

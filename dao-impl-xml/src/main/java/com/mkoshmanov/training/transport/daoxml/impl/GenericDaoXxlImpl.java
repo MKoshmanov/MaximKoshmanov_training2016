@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daoapi.IGenericDao;
 import com.mkoshmanov.training.transport.datamodel.AbstractModel;
-import com.mkoshmanov.training.transport.datamodel.utils.Table;
 import com.thoughtworks.xstream.XStream;
 
 @Repository
@@ -29,10 +28,11 @@ public abstract class GenericDaoXxlImpl<T extends AbstractModel> implements IGen
 	private String basePath;
 
 	public abstract Class<T> getClassName();
+	public abstract String getTableName();
 
 	public GenericDaoXxlImpl() {
 		entityClass = getClassName();
-		tableName = entityClass.getAnnotation(Table.class).name();
+		tableName = getTableName();
 	}
 
 	@PostConstruct

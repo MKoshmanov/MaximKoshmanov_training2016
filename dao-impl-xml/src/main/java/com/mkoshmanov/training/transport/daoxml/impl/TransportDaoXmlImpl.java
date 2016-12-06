@@ -14,6 +14,11 @@ public class TransportDaoXmlImpl extends GenericDaoXxlImpl<Transport> implements
 	public Class<Transport> getClassName() {
 		return Transport.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Transport.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public void update(Transport entity) {

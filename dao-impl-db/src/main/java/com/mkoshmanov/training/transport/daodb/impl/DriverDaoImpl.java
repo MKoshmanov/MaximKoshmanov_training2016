@@ -24,8 +24,8 @@ public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao 
 	private static final String SQL_UPDATE = "UPDATE driver SET first_name=?, last_name=?, birthday=?, license_category=?  WHERE id=?";
 
 	private static final String SQL_GET_DRIVERS_ON_PARTICULAR_ROUTE = "SELECT d.first_name, d.last_name, d.birthday, "
-			+ "r.number, r.name FROM driver d RIGHT JOIN transport t ON t.driver_id = "
-			+ "d.id RIGHT JOIN route r ON r.id = t.route_id WHERE r.number = ?";
+			+ "r.number, r.name FROM driver d JOIN transport t ON t.driver_id = "
+			+ "d.id JOIN route r ON r.id = t.route_id WHERE r.number = ?";
 
 	private static final String SQL_GET_ALL_FREE_DRIVERS = "SELECT driver FROM driver EXCEPT "
 			+ "SELECT driver FROM driver, transport WHERE transport.driver_id = driver.id";
@@ -36,6 +36,11 @@ public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao 
 	@Override
 	public Class<Driver> getClassName() {
 		return Driver.class;
+	}
+	
+	@Override
+	public String getTableName() {
+		return Driver.class.getSimpleName().toLowerCase();
 	}
 
 	@Override

@@ -25,6 +25,11 @@ public class TransportDaoImpl extends GenericDaoImpl<Transport> implements ITran
 	public Class<Transport> getClassName() {
 		return Transport.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Transport.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public Long insert(final Transport entity) {

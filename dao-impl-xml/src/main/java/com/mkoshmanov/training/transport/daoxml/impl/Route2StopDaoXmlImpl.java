@@ -15,6 +15,11 @@ public class Route2StopDaoXmlImpl extends GenericDaoXxlImpl<Route2Stop> implemen
 	public Class<Route2Stop> getClassName() {
 		return Route2Stop.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Route2Stop.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public void update(Route2Stop entity) {

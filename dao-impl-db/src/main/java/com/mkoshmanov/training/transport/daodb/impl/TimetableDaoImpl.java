@@ -25,6 +25,11 @@ public class TimetableDaoImpl extends GenericDaoImpl<Timetable> implements ITime
 	public Class<Timetable> getClassName() {
 		return Timetable.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Timetable.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public Long insert(final Timetable entity) {

@@ -1,13 +1,11 @@
 package com.mkoshmanov.training.transport.web.model;
 
-import java.sql.Time;
-
-public class TimetableModel {
+public class Route2StopDTO {
 
 	private Long id;
 	private Integer transportStopId;
 	private Integer routeId;
-	private Time arrivalTime;
+	private Integer sequence;
 
 	public Long getId() {
 		return id;
@@ -33,17 +31,17 @@ public class TimetableModel {
 		this.routeId = routeId;
 	}
 
-	public Time getArrivalTime() {
-		return arrivalTime;
+	public Integer getSequence() {
+		return sequence;
 	}
 
-	public void setArrivalTime(Time arrivalTime) {
-		this.arrivalTime = arrivalTime;
+	public void setSequence(Integer sequence) {
+		this.sequence = sequence;
 	}
 
 	@Override
 	public String toString() {
-		return "TimetableModel [id=" + id + ", transportStopId=" + transportStopId + ", routeId=" + routeId
-				+ ", arrivalTime=" + arrivalTime + "]";
+		return "Route2StopModel [id=" + id + ", transportStopId=" + transportStopId + ", routeId=" + routeId
+				+ ", sequence=" + sequence + "]";
 	}
 }

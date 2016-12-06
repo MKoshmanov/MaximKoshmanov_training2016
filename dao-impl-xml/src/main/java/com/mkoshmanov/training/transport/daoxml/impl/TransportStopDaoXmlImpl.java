@@ -16,6 +16,11 @@ public class TransportStopDaoXmlImpl extends GenericDaoXxlImpl<TransportStop> im
 	}
 
 	@Override
+	public String getTableName() {
+		return TransportStop.class.getSimpleName().toLowerCase();
+	}
+	
+	@Override
 	public void update(TransportStop entity) {
 		List<TransportStop> transportStops = readCollection();
 		for (TransportStop transportStop : transportStops) {

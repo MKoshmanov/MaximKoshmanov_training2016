@@ -14,6 +14,11 @@ public class TimetableDaoXmlImpl extends GenericDaoXxlImpl<Timetable> implements
 	public Class<Timetable> getClassName() {
 		return Timetable.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Timetable.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public void update(Timetable entity) {

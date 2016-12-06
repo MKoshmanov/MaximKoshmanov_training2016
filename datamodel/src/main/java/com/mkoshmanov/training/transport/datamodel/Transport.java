@@ -1,8 +1,5 @@
 package com.mkoshmanov.training.transport.datamodel;
 
-import com.mkoshmanov.training.transport.datamodel.utils.Table;
-
-@Table(name = "transport")
 public class Transport extends AbstractModel {
 
 	private String vehicleType;

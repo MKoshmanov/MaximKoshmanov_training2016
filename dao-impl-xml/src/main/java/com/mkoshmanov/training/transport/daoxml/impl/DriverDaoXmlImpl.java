@@ -15,6 +15,11 @@ public class DriverDaoXmlImpl extends GenericDaoXxlImpl<Driver> implements IDriv
 	public Class<Driver> getClassName() {
 		return Driver.class;
 	}
+	
+	@Override
+	public String getTableName() {
+		return Driver.class.getSimpleName().toLowerCase();
+	}
 
 	@Override
 	public void update(Driver entity) {

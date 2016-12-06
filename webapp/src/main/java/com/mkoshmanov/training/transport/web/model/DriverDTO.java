@@ -2,7 +2,7 @@ package com.mkoshmanov.training.transport.web.model;
 
 import java.sql.Date;
 
-public class DriverModel {
+public class DriverDTO {
 	private Long id;
     private String firstName;
 	private String lastName;

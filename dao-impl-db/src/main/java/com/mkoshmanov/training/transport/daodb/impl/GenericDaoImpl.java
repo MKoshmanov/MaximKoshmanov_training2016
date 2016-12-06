@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daoapi.IGenericDao;
-import com.mkoshmanov.training.transport.datamodel.utils.Table;
 
 @Repository
 public abstract class GenericDaoImpl<T> implements IGenericDao<T> {
@@ -26,10 +25,11 @@ public abstract class GenericDaoImpl<T> implements IGenericDao<T> {
 	private String SQL_GET_ALL;
 
 	public abstract Class<T> getClassName();
+	public abstract String getTableName();
 	
 	public GenericDaoImpl() {
 		entityClass = getClassName();
-		tableName = entityClass.getAnnotation(Table.class).name();
+		tableName = getTableName();
 		rowMapper = new BeanPropertyRowMapper<T>(entityClass);
 		SQL_GET_BY_ID = "SELECT * FROM " + tableName + " WHERE id = ?";
 		SQL_DELETE_BY_ID = "DELETE FROM " + tableName + " WHERE id=?";

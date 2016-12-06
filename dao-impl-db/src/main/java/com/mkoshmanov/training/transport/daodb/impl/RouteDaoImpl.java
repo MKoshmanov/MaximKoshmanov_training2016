@@ -23,12 +23,17 @@ public class RouteDaoImpl extends GenericDaoImpl<Route> implements IRouteDao {
 	private static final String SQL_UPDATE = "UPDATE route SET number=?, name=? WHERE id=?";
 
 	private static final String SQL_STOPS_ON_ROUTE = "SELECT ts.name, r.number FROM transport_stop ts "
-			+ "RIGHT JOIN route_2_stop r2s ON ts.id = r2s.transport_stop_id "
-			+ "RIGHT JOIN route r ON r2s.route_id = r.id WHERE r.id=?";
+			+ "JOIN route_2_stop r2s ON ts.id = r2s.transport_stop_id "
+			+ "JOIN route r ON r2s.route_id = r.id WHERE r.id=?";
 
 	@Override
 	public Class<Route> getClassName() {
 		return Route.class;
+	}
+	
+	@Override
+	public String getTableName() {
+		return Route.class.getSimpleName().toLowerCase();
 	}
 
 	@Override

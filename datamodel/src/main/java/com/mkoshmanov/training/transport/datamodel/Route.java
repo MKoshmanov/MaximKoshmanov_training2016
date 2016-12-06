@@ -1,8 +1,5 @@
 package com.mkoshmanov.training.transport.datamodel;
 
-import com.mkoshmanov.training.transport.datamodel.utils.Table;
-
-@Table(name = "route")
 public class Route extends AbstractModel {
 
 	private Integer number;

@@ -1,19 +1,15 @@
 package com.mkoshmanov.training.transport.datamodel;
 
-
-
 import java.util.Date;
 
-import com.mkoshmanov.training.transport.datamodel.utils.Table;
 
-@Table(name = "driver")
 public class Driver extends AbstractModel {
 
 	private String firstName;
 	private String lastName;
 	private Date birthday;
 	private String licenseCategory;
-
+	
 	public String getFirstName() {
 		return firstName;
 	}

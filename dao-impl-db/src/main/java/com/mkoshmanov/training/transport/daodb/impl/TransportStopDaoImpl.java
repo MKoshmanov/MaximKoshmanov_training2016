@@ -25,6 +25,11 @@ public class TransportStopDaoImpl extends GenericDaoImpl<TransportStop> implemen
 	}
 	
 	@Override
+	public String getTableName() {
+		return TransportStop.class.getSimpleName().toLowerCase();
+	}
+	
+	@Override
 	public Long insert(final TransportStop entity) {
 		KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {

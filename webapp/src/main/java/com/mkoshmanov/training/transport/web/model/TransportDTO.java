@@ -1,6 +1,6 @@
 package com.mkoshmanov.training.transport.web.model;
 
-public class TransportModel {
+public class TransportDTO {
 
 	private Long id;
 	private String vehicleType;

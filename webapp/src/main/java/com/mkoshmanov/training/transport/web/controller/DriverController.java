@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 import com.mkoshmanov.training.transport.services.IDriverService;
 import com.mkoshmanov.training.transport.services.components.UserDataStorage;
-import com.mkoshmanov.training.transport.web.model.DriverModel;
+import com.mkoshmanov.training.transport.web.model.DriverDTO;
 
 @RestController
 @RequestMapping("/driver")
@@ -28,35 +28,38 @@ public class DriverController {
 
 	@Inject
 	private IDriverService service;
+	
+	
+	private DriverController driverController;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<List<DriverModel>> getAll() {
+	public ResponseEntity<List<DriverDTO>> getAll() {
 		UserDataStorage userDataStorage = context.getBean(UserDataStorage.class);
         System.out.println("DriverController:" + userDataStorage);
 				List<Driver> drivers = service.getAll();
 
-		List<DriverModel> converted = new ArrayList<>();
+		List<DriverDTO> converted = new ArrayList<>();
 		for (Driver driver : drivers) {
 			converted.add(entity2model(driver));
 		}
-		return new ResponseEntity<List<DriverModel>>(converted, HttpStatus.OK);
+		return new ResponseEntity<List<DriverDTO>>(converted, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{driverId}", method = RequestMethod.GET)
-	public ResponseEntity<DriverModel> getById(@PathVariable Long driverId) {
+	public ResponseEntity<DriverDTO> getById(@PathVariable Long driverId) {
 		Driver driver = service.getById(driverId);
-		return new ResponseEntity<DriverModel>(entity2model(driver), HttpStatus.OK);
+		return new ResponseEntity<DriverDTO>(entity2model(driver), HttpStatus.OK);
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> createNewDriver(@RequestBody DriverModel driverModel) {
-		service.save(model2entity(driverModel));
+	public ResponseEntity<Void> createNewDriver(@RequestBody DriverDTO driverDTO) {
+		service.save(model2entity(driverDTO));
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/{driverId}", method = RequestMethod.PUT)
-	public ResponseEntity<Void> updateDriver(@RequestBody DriverModel driverModel, @PathVariable Long driverId) {
-		Driver driver = model2entity(driverModel);
+	public ResponseEntity<Void> updateDriver(@RequestBody DriverDTO driverDTO, @PathVariable Long driverId) {
+		Driver driver = model2entity(driverDTO);
 		driver.setId(driverId);
 		service.update(driver);
 		return new ResponseEntity<Void>(HttpStatus.OK);
@@ -68,19 +71,19 @@ public class DriverController {
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
-	private DriverModel entity2model(Driver driver) {
-		DriverModel e = new DriverModel();
+	private DriverDTO entity2model(Driver driver) {
+		DriverDTO e = new DriverDTO();
 		e.setFirstName(driver.getFirstName());
 		e.setId(driver.getId());
 		e.setLastName(driver.getLastName());
 		return e;
 	}
 
-	private Driver model2entity(DriverModel driverModel) {
+	private Driver model2entity(DriverDTO driverDTO) {
 		Driver e = new Driver();
-		e.setFirstName(driverModel.getFirstName());
-		e.setId(driverModel.getId());
-		e.setLastName(driverModel.getLastName());
+		e.setFirstName(driverDTO.getFirstName());
+		e.setId(driverDTO.getId());
+		e.setLastName(driverDTO.getLastName());
 		return e;
 	}
 }
