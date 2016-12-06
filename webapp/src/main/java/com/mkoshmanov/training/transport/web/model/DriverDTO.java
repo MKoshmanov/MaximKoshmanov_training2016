@@ -1,6 +1,6 @@
 package com.mkoshmanov.training.transport.web.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class DriverDTO {
 	private Long id;
