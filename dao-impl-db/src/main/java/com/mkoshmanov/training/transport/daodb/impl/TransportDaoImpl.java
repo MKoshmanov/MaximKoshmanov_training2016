@@ -22,22 +22,12 @@ public class TransportDaoImpl extends GenericDaoImpl<Transport> implements ITran
 			+ "route_id=? WHERE id=?";
 
 	@Override
-	public Class<Transport> getClassName() {
-		return Transport.class;
-	}
-	
-	@Override
-	public String getTableName() {
-		return Transport.class.getSimpleName().toLowerCase();
-	}
-
-	@Override
 	public Long insert(final Transport entity) {
-		KeyHolder keyHolder = new GeneratedKeyHolder();
+        final KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
+            public PreparedStatement createPreparedStatement(final Connection connection) throws SQLException {
+                final PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
 				ps.setString(1, entity.getVehicleType());
 				ps.setLong(2, entity.getDriverId());
 				ps.setLong(3, entity.getRouteId());
@@ -49,7 +39,7 @@ public class TransportDaoImpl extends GenericDaoImpl<Transport> implements ITran
 	}
 
 	@Override
-	public void update(Transport entity) {
+    public void update(final Transport entity) {
 		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getVehicleType(), 
 				entity.getDriverId(), entity.getRouteId(), entity.getId() });
 	}

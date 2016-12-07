@@ -41,6 +41,15 @@ CREATE TABLE "route" (
   OIDS=FALSE
 );
 
+CREATE TABLE "logs"
+(
+  event_date character varying(100),
+  level character varying(200) ,
+  logger character varying(500) ,
+  message character varying(100),
+  exception character varying(500)
+);
+
 
 
 CREATE TABLE "transport" (

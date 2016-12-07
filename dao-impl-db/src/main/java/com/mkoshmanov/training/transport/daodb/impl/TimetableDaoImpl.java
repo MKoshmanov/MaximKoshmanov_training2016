@@ -22,22 +22,12 @@ public class TimetableDaoImpl extends GenericDaoImpl<Timetable> implements ITime
 			+ "arrival_time=? WHERE id=?";
 
 	@Override
-	public Class<Timetable> getClassName() {
-		return Timetable.class;
-	}
-	
-	@Override
-	public String getTableName() {
-		return Timetable.class.getSimpleName().toLowerCase();
-	}
-
-	@Override
 	public Long insert(final Timetable entity) {
-		KeyHolder keyHolder = new GeneratedKeyHolder();
+        final KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
+            public PreparedStatement createPreparedStatement(final Connection connection) throws SQLException {
+                final PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
 				ps.setInt(1, entity.getTransportStopId());
 				ps.setInt(2, entity.getRouteId());
 				ps.setTime(3, entity.getArrivalTime());
@@ -49,7 +39,7 @@ public class TimetableDaoImpl extends GenericDaoImpl<Timetable> implements ITime
 	}
 
 	@Override
-	public void update(Timetable entity) {
+    public void update(final Timetable entity) {
 		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getTransportStopId(), entity.getRouteId(),
 				entity.getArrivalTime(), entity.getId() });
 	}

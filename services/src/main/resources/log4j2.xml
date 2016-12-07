@@ -12,15 +12,29 @@
 				<SizeBasedTriggeringPolicy size="250 MB" />
 			</Policies>
 		</RollingFile>
+		<SMTP name="Mail" subject="Error Log" to="localhost" from="localhost"
+			smtpHost="127.0.0.1" smtpPort="25" bufferSize="50">
+		</SMTP>
+		<JDBC name="databaseAppender" tableName="logs">
+			<ConnectionFactory class="com.mkoshmanov.training.transport.services.util.ConnectionFactory" method="getDatabaseConnection" />
+		    <Column name="event_date" isEventTimestamp="true" />
+			<Column name="level" pattern="%level" isUnicode="false" />
+			<Column name="logger" pattern="%logger" isUnicode="false" />
+			<Column name="message" pattern="%message" isUnicode="false" />
+			<Column name="exception" pattern="%ex{full}" isUnicode="false" />
+		</JDBC>
+
 	</Appenders>
 	<Loggers>
 		<Root level="info">
 			<AppenderRef ref="Console" />
+			<AppenderRef ref="Mail" />
 		</Root>
-		<Logger level="info" name="com.mkoshmanov.training"
-			additivity="false">
+		<Logger level="info" name="com.mkoshmanov.training" additivity="false">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="RollingFile" />
+			<AppenderRef ref="Mail" />
+			<AppenderRef ref="databaseAppender" />
 		</Logger>
 	</Loggers>
 </Configuration>

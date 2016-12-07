@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +19,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 import com.mkoshmanov.training.transport.services.IDriverService;
 import com.mkoshmanov.training.transport.services.components.UserDataStorage;
+import com.mkoshmanov.training.transport.services.impl.DriverServiceImpl;
 import com.mkoshmanov.training.transport.web.model.DriverDTO;
 
 @RestController
 @RequestMapping("/driver")
 public class DriverController {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(DriverController.class);
+	
 	@Inject
 	private ApplicationContext context;
 
@@ -34,6 +39,8 @@ public class DriverController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<List<DriverDTO>> getAll() {
+		LOGGER.info("1.2.3");
+		LOGGER.error("sss");
 		UserDataStorage userDataStorage = context.getBean(UserDataStorage.class);
         System.out.println("DriverController:" + userDataStorage);
 				List<Driver> drivers = service.getAll();
@@ -41,6 +48,7 @@ public class DriverController {
 		List<DriverDTO> converted = new ArrayList<>();
 		for (Driver driver : drivers) {
 			converted.add(entity2model(driver));
+			
 		}
 		return new ResponseEntity<List<DriverDTO>>(converted, HttpStatus.OK);
 	}

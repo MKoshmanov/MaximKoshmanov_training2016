@@ -1,1 +1,22 @@
-00:10:05.608 [qtp2106620844-19] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 26, first name = Ivan, last name = Obramov
+02:42:41.997 [qtp8648110-14] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+02:42:42.264 [qtp8648110-14] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+02:50:33.125 [qtp8648110-14] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+02:50:33.130 [qtp8648110-14] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+02:51:13.441 [qtp8648110-14] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+02:51:13.467 [qtp8648110-14] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+02:57:30.182 [qtp8648110-13] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+02:57:30.207 [qtp8648110-13] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+02:58:15.767 [qtp15512410-15] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+02:58:15.792 [qtp15512410-15] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+03:01:09.133 [qtp15512410-13] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+03:01:09.165 [qtp15512410-13] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+03:03:10.265 [qtp15512410-14] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+03:03:10.301 [qtp15512410-14] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+03:04:10.930 [qtp15512410-13] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+03:04:10.974 [qtp15512410-13] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+03:07:12.408 [qtp15512410-13] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+03:07:12.459 [qtp15512410-13] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+03:11:20.323 [qtp8648110-13] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+03:11:20.352 [qtp8648110-13] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss
+03:12:36.166 [qtp8648110-13] INFO  com.mkoshmanov.training.transport.web.controller.DriverController - 1.2.3
+03:12:36.177 [qtp8648110-13] ERROR com.mkoshmanov.training.transport.web.controller.DriverController - sss

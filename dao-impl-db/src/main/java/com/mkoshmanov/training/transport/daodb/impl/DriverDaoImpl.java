@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 import java.util.List;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -33,23 +34,13 @@ public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao 
 	private static final String SQL_GET_ALL_BUSY_DRIVERS = "SELECT driver FROM driver, transport "
 			+ "WHERE transport.driver_id = driver.id";
 
-	@Override
-	public Class<Driver> getClassName() {
-		return Driver.class;
-	}
-	
-	@Override
-	public String getTableName() {
-		return Driver.class.getSimpleName().toLowerCase();
-	}
-
-	@Override
+    @Override
 	public Long insert(final Driver entity) {
-		KeyHolder keyHolder = new GeneratedKeyHolder();
+        final KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
-			public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-				PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
+            public PreparedStatement createPreparedStatement(final Connection connection) throws SQLException {
+                final PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
 				ps.setString(1, entity.getFirstName());
 				ps.setString(2, entity.getLastName());
 				ps.setDate(3, (Date) entity.getBirthday());
@@ -62,28 +53,28 @@ public class DriverDaoImpl extends GenericDaoImpl<Driver> implements IDriverDao 
 	}
 
 	@Override
-	public void update(Driver entity) {
+    public void update(final Driver entity) {
 		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getFirstName(), entity.getLastName(),
 				entity.getBirthday(), entity.getLicenceCategory(), entity.getId() });
 	}
 
 	@Override
-	public List<DriversOnRoute> getDriversOnParticularRoute(Integer number) {
-		List<DriversOnRoute> rs = jdbcTemplate.query(SQL_GET_DRIVERS_ON_PARTICULAR_ROUTE,
+    public List<DriversOnRoute> getDriversOnParticularRoute(final Integer number) {
+        final List<DriversOnRoute> rs = jdbcTemplate.query(SQL_GET_DRIVERS_ON_PARTICULAR_ROUTE,
 				new BeanPropertyRowMapper<DriversOnRoute>(DriversOnRoute.class));
 		return rs;
 	}
 
 	@Override
 	public List<DriversOnRoute> getAllBusyDrivers() {
-		List<DriversOnRoute> rs = jdbcTemplate.query(SQL_GET_ALL_BUSY_DRIVERS,
+        final List<DriversOnRoute> rs = jdbcTemplate.query(SQL_GET_ALL_BUSY_DRIVERS,
 				new BeanPropertyRowMapper<DriversOnRoute>(DriversOnRoute.class));
 		return rs;
 	}
 
 	@Override
 	public List<DriversOnRoute> getAllFreeDrivers() {
-		List<DriversOnRoute> rs = jdbcTemplate.query(SQL_GET_ALL_FREE_DRIVERS,
+        final List<DriversOnRoute> rs = jdbcTemplate.query(SQL_GET_ALL_FREE_DRIVERS,
 				new BeanPropertyRowMapper<DriversOnRoute>(DriversOnRoute.class));
 		return rs;
 	}
