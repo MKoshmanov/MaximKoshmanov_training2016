@@ -18,7 +18,7 @@ public class DriversOnRouteMapper implements RowMapper<DriversOnRoute> {
 		driver.setFirstName(rs.getString("firstName"));
 		driver.setLastName(rs.getString("lastName"));
 		driver.setBirthday(rs.getDate("birthday"));
-		driver.setLicenceCategory(rs.getString("licenceCategory"));
+		driver.setLicenseCategory(rs.getString("licenceCategory"));
 
 		Route route = new Route();
 		route.setId(rs.getLong("id"));

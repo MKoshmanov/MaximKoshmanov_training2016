@@ -29,7 +29,7 @@ public class DriverDaoXmlImpl extends GenericDaoXxlImpl<Driver> implements IDriv
 				driver.setFirstName(entity.getFirstName());
 				driver.setLastName(entity.getLastName());
 				driver.setBirthday(entity.getBirthday());
-				driver.setLicenceCategory(entity.getLicenceCategory());
+				driver.setLicenseCategory(entity.getLicenseCategory());
 				break;
 			}
 			else {
@@ -50,7 +50,7 @@ public class DriverDaoXmlImpl extends GenericDaoXxlImpl<Driver> implements IDriv
 	}
 
 	@Override
-	public List<DriversOnRoute> getAllFreeDrivers() {
+	public List<Driver> getAllFreeDrivers() {
 		throw new UnsupportedOperationException();
 	}
 

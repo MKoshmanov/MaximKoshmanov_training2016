@@ -11,6 +11,6 @@ public interface IDriverDao extends IGenericDao<Driver> {
 	
 	List<DriversOnRoute> getAllBusyDrivers();
 	
-	List<DriversOnRoute> getAllFreeDrivers();
+	List<Driver> getAllFreeDrivers();
 		
 }

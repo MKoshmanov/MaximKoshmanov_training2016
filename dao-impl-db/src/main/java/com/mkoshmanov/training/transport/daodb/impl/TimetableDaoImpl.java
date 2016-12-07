@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import javax.inject.Inject;
+
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -15,6 +18,9 @@ import com.mkoshmanov.training.transport.datamodel.Timetable;
 @Repository
 public class TimetableDaoImpl extends GenericDaoImpl<Timetable> implements ITimetableDao {
 
+	@Inject
+	private JdbcTemplate jdbcTemplate;
+
 	private static final String SQL_INSERT = "INSERT INTO timetable (transport_stop_id, route_id, "
 			+ "arrival_time) VALUES (?, ?, ?)";
 
@@ -23,11 +29,11 @@ public class TimetableDaoImpl extends GenericDaoImpl<Timetable> implements ITime
 
 	@Override
 	public Long insert(final Timetable entity) {
-        final KeyHolder keyHolder = new GeneratedKeyHolder();
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
-            public PreparedStatement createPreparedStatement(final Connection connection) throws SQLException {
-                final PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
+			public PreparedStatement createPreparedStatement(final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
 				ps.setInt(1, entity.getTransportStopId());
 				ps.setInt(2, entity.getRouteId());
 				ps.setTime(3, entity.getArrivalTime());
@@ -39,7 +45,7 @@ public class TimetableDaoImpl extends GenericDaoImpl<Timetable> implements ITime
 	}
 
 	@Override
-    public void update(final Timetable entity) {
+	public void update(final Timetable entity) {
 		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getTransportStopId(), entity.getRouteId(),
 				entity.getArrivalTime(), entity.getId() });
 	}

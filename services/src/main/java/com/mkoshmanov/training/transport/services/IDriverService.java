@@ -11,6 +11,6 @@ public interface IDriverService extends IGenericService<Driver> {
 
 	List<DriversOnRoute> getAllBusyDrivers();
 
-	List<DriversOnRoute> getAllFreeDrivers();
+	List<Driver> getAllFreeDrivers();
 
 }

@@ -15,7 +15,7 @@ import com.mkoshmanov.training.transport.daoapi.IGenericDao;
 public abstract class GenericDaoImpl<T> implements IGenericDao<T> {
 
     @Inject
-    protected JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     private final Class<T> entityClass;
     private final RowMapper<T> rowMapper;

@@ -37,15 +37,15 @@ public class DriverServiceTest {
 		driverOne.setFirstName("Ivan");
 		driverOne.setLastName("Ivanov");
 		driverOne.setBirthday(Date.valueOf("1963-12-04"));
-		driverOne.setLicenceCategory("D");
+		driverOne.setLicenseCategory("D");
 		driverTwo.setFirstName("Vasiliy");
 		driverTwo.setLastName("Pupkin");
 		driverTwo.setBirthday(Date.valueOf("1981-02-14"));
-		driverTwo.setLicenceCategory("D");
+		driverTwo.setLicenseCategory("D");
 		driverThree.setFirstName("Oleg");
 		driverThree.setLastName("Vasechkin");
 		driverThree.setBirthday(Date.valueOf("1976-01-01"));
-		driverThree.setLicenceCategory("D");
+		driverThree.setLicenseCategory("D");
 		driverService.saveAll(Arrays.asList(driverOne, driverTwo, driverThree));
 	}
 
@@ -57,12 +57,12 @@ public class DriverServiceTest {
 		driverForTest.setFirstName("Sergey");
 		driverForTest.setLastName("Nikolaev");
 		driverForTest.setBirthday(Date.valueOf("1987-01-01"));
-		driverForTest.setLicenceCategory("D");
+		driverForTest.setLicenseCategory("D");
 		Driver driverForTest1 = new Driver();
 		driverForTest1.setFirstName("Vasiliy");
 		driverForTest1.setLastName("Nosov");
 		driverForTest1.setBirthday(Date.valueOf("1984-01-01"));
-		driverForTest1.setLicenceCategory("D");
+		driverForTest1.setLicenseCategory("D");
 		driverService.saveAll(Arrays.asList(driverForTest, driverForTest1));
 		List<Driver> driversAfterSave = driverService.getAll();
 		int afterSave = driversAfterSave.size();
@@ -75,7 +75,7 @@ public class DriverServiceTest {
 		driverForTest.setFirstName("Sergey");
 		driverForTest.setLastName("Nikolaev");
 		driverForTest.setBirthday(Date.valueOf("1987-01-01"));
-		driverForTest.setLicenceCategory("D");
+		driverForTest.setLicenseCategory("D");
 		Long id = driverService.save(driverForTest);
 		Driver driverInDataBase = driverService.getById(id);
 		assertEquals(driverForTest.getId(), driverInDataBase.getId());

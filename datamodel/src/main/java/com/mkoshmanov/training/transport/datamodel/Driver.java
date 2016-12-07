@@ -1,6 +1,8 @@
 package com.mkoshmanov.training.transport.datamodel;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class Driver extends AbstractModel {
@@ -9,7 +11,8 @@ public class Driver extends AbstractModel {
 	private String lastName;
 	private Date birthday;
 	private String licenseCategory;
-	
+	private Set<Transport> transports = new HashSet<Transport>();
+		
 	public String getFirstName() {
 		return firstName;
 	}
@@ -34,12 +37,27 @@ public class Driver extends AbstractModel {
 		this.birthday = birthday;
 	}
 
-	public String getLicenceCategory() {
+	public String getLicenseCategory() {
 		return licenseCategory;
 	}
 
-	public void setLicenceCategory(String licenceCategory) {
+	public void setLicenseCategory(String licenceCategory) {
 		this.licenseCategory = licenceCategory;
+	}
+	
+	public Set<Transport> getTransport() {
+		return transports;
+	}
+
+	public void setTransport(Set<Transport> transports) {
+		this.transports = transports;
+	}
+	
+	public void addTransport(Transport transport){
+		if (transports == null) {
+            transports = new HashSet<Transport>();
+        }
+        transports.add(transport);
 	}
 
 	@Override

@@ -15,7 +15,7 @@ public class DriverConverterImpl implements IConverter<Driver, DriverDTO> {
 		driver.setFirstName(dto.getFirstName());
 		driver.setLastName(dto.getLastName());
 		driver.setBirthday(dto.getBirthday());
-		driver.setLicenceCategory(dto.getLicenceCategory());
+		driver.setLicenseCategory(dto.getLicenceCategory());
 		return driver;
 	}
 
@@ -26,7 +26,7 @@ public class DriverConverterImpl implements IConverter<Driver, DriverDTO> {
 		driverDTO.setFirstName(entity.getFirstName());
 		driverDTO.setLastName(entity.getLastName());
 		driverDTO.setBirthday(entity.getBirthday());
-		driverDTO.setLicenceCategory(entity.getLicenceCategory());
+		driverDTO.setLicenceCategory(entity.getLicenseCategory());
 		return driverDTO;
 	}
 }

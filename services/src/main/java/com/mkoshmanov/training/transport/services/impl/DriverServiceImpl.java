@@ -36,7 +36,7 @@ public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDr
 			LOGGER.info(
 					"Driver hire: id = {}, first name = {}, last name = {}, birthday = {}, driving license category = {}",
 					driver.getId(), driver.getFirstName(), driver.getLastName(), driver.getBirthday(),
-					driver.getLicenceCategory());
+					driver.getLicenseCategory());
 			return id;
 		} else {
 			driverDao.update(driver);
@@ -55,7 +55,7 @@ public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDr
 	}
 
 	@Override
-	public List<DriversOnRoute> getAllFreeDrivers() {
+	public List<Driver> getAllFreeDrivers() {
 		return driverDao.getAllFreeDrivers();
 	}
 }

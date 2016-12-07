@@ -6,7 +6,10 @@ import java.sql.SQLException;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -19,6 +22,9 @@ import com.mkoshmanov.training.transport.datamodel.Route2Stop;
 @Repository
 public class Route2StopDaoImpl extends GenericDaoImpl<Route2Stop> implements IRoute2StopDao {
 
+	@Inject
+	private JdbcTemplate jdbcTemplate;
+
 	private static final String SQL_INSERT = "INSERT INTO route_2_stop (transport_stop_id, "
 			+ "route_id, sequense) VALUES (?, ?, ?)";
 
@@ -30,11 +36,11 @@ public class Route2StopDaoImpl extends GenericDaoImpl<Route2Stop> implements IRo
 
 	@Override
 	public Long insert(final Route2Stop entity) {
-        final KeyHolder keyHolder = new GeneratedKeyHolder();
+		final KeyHolder keyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(new PreparedStatementCreator() {
 			@Override
-            public PreparedStatement createPreparedStatement(final Connection connection) throws SQLException {
-                final PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
+			public PreparedStatement createPreparedStatement(final Connection connection) throws SQLException {
+				final PreparedStatement ps = connection.prepareStatement(SQL_INSERT, new String[] { "id" });
 				ps.setInt(1, entity.getTransportStopId());
 				ps.setInt(2, entity.getRouteId());
 				ps.setInt(3, entity.getSequence());
@@ -46,14 +52,14 @@ public class Route2StopDaoImpl extends GenericDaoImpl<Route2Stop> implements IRo
 	}
 
 	@Override
-    public void update(final Route2Stop entity) {
+	public void update(final Route2Stop entity) {
 		jdbcTemplate.update(SQL_UPDATE, new Object[] { entity.getTransportStopId(), entity.getRouteId(),
 				entity.getSequence(), entity.getId() });
 	}
 
 	@Override
-    public List<TransportStopAndRoute> countRoutesThroughStop(final Long id) {
-        final List<TransportStopAndRoute> rs = jdbcTemplate.query(SQL_COUNT_ROUTES_THROUGH_STOP,
+	public List<TransportStopAndRoute> countRoutesThroughStop(final Long id) {
+		final List<TransportStopAndRoute> rs = jdbcTemplate.query(SQL_COUNT_ROUTES_THROUGH_STOP,
 				new BeanPropertyRowMapper<TransportStopAndRoute>(TransportStopAndRoute.class));
 		return rs;
 	}
