@@ -1,18 +1,19 @@
 package com.mkoshmanov.training.transport.datamodel;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
-
 
 public class Driver extends AbstractModel {
 
 	private String firstName;
 	private String lastName;
 	private Date birthday;
-	private String licenseCategory;
+	public Transport transport;
+
 	private Set<Transport> transports = new HashSet<Transport>();
-		
+	private Set<RouteStation> routes = new HashSet<RouteStation>();
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -37,32 +38,47 @@ public class Driver extends AbstractModel {
 		this.birthday = birthday;
 	}
 
-	public String getLicenseCategory() {
-		return licenseCategory;
+	public Transport getTransport() {
+		return transport;
 	}
 
-	public void setLicenseCategory(String licenceCategory) {
-		this.licenseCategory = licenceCategory;
+	public void setTransport(Transport transport) {
+		this.transport = transport;
 	}
-	
-	public Set<Transport> getTransport() {
+
+	public Set<Transport> getTransports() {
 		return transports;
 	}
 
-	public void setTransport(Set<Transport> transports) {
+	public void setTransports(Set<Transport> transports) {
 		this.transports = transports;
 	}
-	
-	public void addTransport(Transport transport){
+
+	public void addTransport(Transport transport) {
 		if (transports == null) {
-            transports = new HashSet<Transport>();
-        }
-        transports.add(transport);
+			transports = new HashSet<Transport>();
+		}
+		transports.add(transport);
+	}
+
+	public Set<RouteStation> getRoute() {
+		return routes;
+	}
+
+	public void setRoute(Set<RouteStation> routes) {
+		this.routes = routes;
+	}
+
+	public void addRoute(RouteStation route) {
+		if (routes == null) {
+			routes = new HashSet<RouteStation>();
+		}
+		routes.add(route);
 	}
 
 	@Override
 	public String toString() {
-		return "Driver [firstName=" + firstName + ", lastName=" + lastName + ", birthday=" + birthday
-				+ ", licenceCategory=" + licenseCategory + ", id=" + id + "]";
+		return "Driver [firstName=" + firstName + ", lastName=" + lastName + ", birthday=" + birthday + ", transport="
+				+ transport + ", id=" + id + "]";
 	}
 }

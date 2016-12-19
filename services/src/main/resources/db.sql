@@ -1,8 +1,6 @@
 CREATE TABLE "timetable" (
 	"id" serial NOT NULL,
-	"transport_stop_id" integer NOT NULL,
-	"route_id" integer NOT NULL,
-	"arrival_time" TIME NOT NULL,
+	"arrival_time" TIME NOT NULL UNIQUE,
 	CONSTRAINT timetable_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -10,44 +8,26 @@ CREATE TABLE "timetable" (
 
 
 
-CREATE TABLE "route_2_stop" (
+CREATE TABLE "route_station" (
 	"id" serial NOT NULL,
-	"route_id" integer NOT NULL,
-	"transport_stop_id" integer NOT NULL,
+	"stop_id" integer NOT NULL,
+	"transport_id" integer NOT NULL,
 	"sequence" integer NOT NULL,
-	CONSTRAINT route_2_stop_pk PRIMARY KEY ("id")
+	"timetable_id" integer NOT NULL,
+	CONSTRAINT route_station_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
 );
 
 
 
-CREATE TABLE "transport_stop" (
+CREATE TABLE "stop" (
 	"id" serial NOT NULL,
-	"name" character varying NOT NULL,
-	CONSTRAINT transport_stop_pk PRIMARY KEY ("id")
+	"name_en" character varying NOT NULL UNIQUE,
+	"name_ru" character varying NOT NULL,
+	CONSTRAINT stop_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
-);
-
-
-
-CREATE TABLE "route" (
-	"id" serial NOT NULL,
-	"number" integer NOT NULL,
-	"name" character varying NOT NULL,
-	CONSTRAINT route_pk PRIMARY KEY ("id")
-) WITH (
-  OIDS=FALSE
-);
-
-CREATE TABLE "logs"
-(
-  event_date character varying(100),
-  level character varying(200) ,
-  logger character varying(500) ,
-  message character varying(100),
-  exception character varying(500)
 );
 
 
@@ -55,8 +35,8 @@ CREATE TABLE "logs"
 CREATE TABLE "transport" (
 	"id" serial NOT NULL,
 	"vehicle_type" character varying NOT NULL,
-	"driver_id" integer NOT NULL UNIQUE,
-	"route_id" integer NOT NULL,
+	"route_number" integer NOT NULL,
+	"route_name" character varying NOT NULL,
 	CONSTRAINT transport_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -66,10 +46,10 @@ CREATE TABLE "transport" (
 
 CREATE TABLE "driver" (
 	"id" serial NOT NULL,
-	"first_name" character varying NOT NULL,
-	"last_name" character varying NOT NULL,
+	"first_name" character varying,
+	"last_name" character varying,
 	"birthday" DATE NOT NULL,
-	"license_category" character varying NOT NULL,
+	"transport_id" integer,
 	CONSTRAINT driver_pk PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -77,14 +57,50 @@ CREATE TABLE "driver" (
 
 
 
-ALTER TABLE "timetable" ADD CONSTRAINT "timetable_fk0" FOREIGN KEY ("transport_stop_id") REFERENCES "transport_stop"("id");
-ALTER TABLE "timetable" ADD CONSTRAINT "timetable_fk1" FOREIGN KEY ("route_id") REFERENCES "route"("id");
+CREATE TABLE "logs" (
+	"event_date" character varying(100) NOT NULL,
+	"level" character varying(200) NOT NULL,
+	"logger" character varying(500) NOT NULL,
+	"message" character varying(100) NOT NULL,
+	"exception" character varying(500) NOT NULL
+) WITH (
+  OIDS=FALSE
+);
 
-ALTER TABLE "route_2_stop" ADD CONSTRAINT "route_2_stop_fk0" FOREIGN KEY ("route_id") REFERENCES "route"("id");
-ALTER TABLE "route_2_stop" ADD CONSTRAINT "route_2_stop_fk1" FOREIGN KEY ("transport_stop_id") REFERENCES "transport_stop"("id");
+
+
+CREATE TABLE "app_user" (
+	"id" serial NOT NULL,
+	"username" character varying NOT NULL UNIQUE,
+	"password" character varying NOT NULL,
+	"email" character varying NOT NULL,
+	"role_id" integer NOT NULL,
+	CONSTRAINT app_user_pk PRIMARY KEY ("id")
+) WITH (
+  OIDS=FALSE
+);
 
 
 
-ALTER TABLE "transport" ADD CONSTRAINT "transport_fk0" FOREIGN KEY ("driver_id") REFERENCES "driver"("id");
-ALTER TABLE "transport" ADD CONSTRAINT "transport_fk1" FOREIGN KEY ("route_id") REFERENCES "route"("id");
+CREATE TABLE "role" (
+	"id" serial NOT NULL,
+	"role" character varying NOT NULL,
+	CONSTRAINT role_pk PRIMARY KEY ("id")
+) WITH (
+  OIDS=FALSE
+);
+
+
+
+
+ALTER TABLE "route_station" ADD CONSTRAINT "route_station_fk0" FOREIGN KEY ("stop_id") REFERENCES "stop"("id");
+ALTER TABLE "route_station" ADD CONSTRAINT "route_station_fk1" FOREIGN KEY ("transport_id") REFERENCES "transport"("id");
+ALTER TABLE "route_station" ADD CONSTRAINT "route_station_fk2" FOREIGN KEY ("timetable_id") REFERENCES "timetable"("id");
+
+
+
+ALTER TABLE "driver" ADD CONSTRAINT "driver_fk0" FOREIGN KEY ("transport_id") REFERENCES "transport"("id");
+
+
+ALTER TABLE "app_user" ADD CONSTRAINT "app_user_fk0" FOREIGN KEY ("role_id") REFERENCES "role"("id");
 

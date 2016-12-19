@@ -1,13 +1,13 @@
 package com.mkoshmanov.training.transport.web.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class DriverDTO {
 	private Long id;
-    private String firstName;
+	private String firstName;
 	private String lastName;
 	private Date birthday;
-	private String licenseCategory;
+	private Long transportId;
 
 	public Long getId() {
 		return id;
@@ -41,17 +41,17 @@ public class DriverDTO {
 		this.birthday = birthday;
 	}
 
-	public String getLicenceCategory() {
-		return licenseCategory;
+	public Long getTransportId() {
+		return transportId;
 	}
 
-	public void setLicenceCategory(String licenceCategory) {
-		this.licenseCategory = licenceCategory;
+	public void setTransportId(Long id) {
+		this.transportId = id;
 	}
 
 	@Override
 	public String toString() {
-		return "DriverModel [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthday="
-				+ birthday + ", licenseCategory=" + licenseCategory + "]";
+		return "DriverDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthday=" + birthday
+				+ ", transportId=" + transportId + "]";
 	}
 }

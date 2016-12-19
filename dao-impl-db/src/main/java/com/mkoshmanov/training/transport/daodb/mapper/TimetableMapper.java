@@ -1,4 +1,4 @@
-package com.mkoshmanov.training.transport.daodb.mapper;
+/*package com.mkoshmanov.training.transport.daodb.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,3 +24,4 @@ public class TimetableMapper implements RowMapper<Timetable> {
 		return entity;
 	}
 }
+*/

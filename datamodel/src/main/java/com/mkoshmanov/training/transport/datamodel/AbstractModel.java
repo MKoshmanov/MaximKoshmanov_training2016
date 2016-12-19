@@ -1,6 +1,8 @@
 package com.mkoshmanov.training.transport.datamodel;
 
-public class AbstractModel {
+import java.io.Serializable;
+
+public class AbstractModel implements Serializable {
 
 	public Long id;
 
@@ -11,5 +13,4 @@ public class AbstractModel {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 }

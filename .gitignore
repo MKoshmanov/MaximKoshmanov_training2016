@@ -11,3 +11,7 @@ dao-api/.settings/
 datamodel/.settings/org.eclipse.core.resources.prefs
 datamodel/.settings/
 .settings/
+services/logs/app.log
+services/logs/app.log
+services/logs/app.log
+services/logs/2016-12/app-12-07-2016-1.log.gz

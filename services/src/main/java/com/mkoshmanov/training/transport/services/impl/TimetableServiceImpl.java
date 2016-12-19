@@ -31,10 +31,7 @@ public class TimetableServiceImpl extends GenericServiceImpl<Timetable> implemen
 	public Long save(Timetable timetable) {
 		if (timetable.getId() == null) {
 			Long id = timetableDao.insert(timetable);
-			LOGGER.info(
-					"Timetable created: id = {}, transport stop id = {}, route id = {}, arrival time = {}",
-					timetable.getId(), timetable.getTransportStopId(), timetable.getRouteId(),
-					timetable.getArrivalTime());
+			LOGGER.info("Timetable created: id = {}, arrival time = {}", timetable.getId(), timetable.getArrivalTime());
 			return id;
 		} else {
 			timetableDao.update(timetable);

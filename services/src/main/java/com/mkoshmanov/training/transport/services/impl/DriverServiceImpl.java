@@ -6,10 +6,11 @@ import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.mkoshmanov.training.transport.daoapi.IDriverDao;
-import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 import com.mkoshmanov.training.transport.services.IDriverService;
 
@@ -21,7 +22,14 @@ public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDr
 	@Inject
 	private IDriverDao driverDao;
 
-	
+	@Override
+	@Cacheable("getById")
+	public Driver getById(final Long id) {
+		simulateSlowService();
+		LOGGER.info("Trying to get driver with id: " + id);
+		return driverDao.getById(id);
+	}
+
 	@Override
 	public void saveAll(List<Driver> drivers) {
 		for (Driver driver : drivers) {
@@ -30,13 +38,10 @@ public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDr
 	}
 
 	@Override
+	@CacheEvict(value = "getById", key = "#driver")
 	public Long save(Driver driver) {
 		if (driver.getId() == null) {
 			Long id = driverDao.insert(driver);
-			LOGGER.info(
-					"Driver hire: id = {}, first name = {}, last name = {}, birthday = {}, driving license category = {}",
-					driver.getId(), driver.getFirstName(), driver.getLastName(), driver.getBirthday(),
-					driver.getLicenseCategory());
 			return id;
 		} else {
 			driverDao.update(driver);
@@ -45,17 +50,26 @@ public class DriverServiceImpl extends GenericServiceImpl<Driver> implements IDr
 	}
 
 	@Override
-	public List<DriversOnRoute> getDriversOnParticularRoyte(Integer number) {
-		return driverDao.getDriversOnParticularRoute(number);
-	}
-
-	@Override
-	public List<DriversOnRoute> getAllBusyDrivers() {
+	public List<Driver> getAllBusyDrivers() {
 		return driverDao.getAllBusyDrivers();
 	}
 
 	@Override
 	public List<Driver> getAllFreeDrivers() {
 		return driverDao.getAllFreeDrivers();
+	}
+
+	@Override
+	public List<Driver> getDriversOnParticularRoute(Integer routeNumber, String vehicleType) {
+		return driverDao.getDriversOnParticularRoute(routeNumber, vehicleType);
+	}
+
+	private void simulateSlowService() {
+		try {
+			final long time = 5000L;
+			Thread.sleep(time);
+		} catch (final InterruptedException e) {
+			throw new IllegalStateException(e);
+		}
 	}
 }

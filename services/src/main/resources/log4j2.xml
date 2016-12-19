@@ -12,9 +12,9 @@
 				<SizeBasedTriggeringPolicy size="250 MB" />
 			</Policies>
 		</RollingFile>
-		<SMTP name="Mail" subject="Error Log" to="localhost" from="localhost"
+	<!-- 	<SMTP name="Mail" subject="Error Log" to="localhost" from="localhost"
 			smtpHost="127.0.0.1" smtpPort="25" bufferSize="50">
-		</SMTP>
+		</SMTP> -->
 		<JDBC name="databaseAppender" tableName="logs">
 			<ConnectionFactory class="com.mkoshmanov.training.transport.services.util.ConnectionFactory" method="getDatabaseConnection" />
 		    <Column name="event_date" isEventTimestamp="true" />
@@ -28,12 +28,12 @@
 	<Loggers>
 		<Root level="info">
 			<AppenderRef ref="Console" />
-			<AppenderRef ref="Mail" />
+		<!-- 	<AppenderRef ref="Mail" /> -->
 		</Root>
 		<Logger level="info" name="com.mkoshmanov.training" additivity="false">
 			<AppenderRef ref="Console" />
 			<AppenderRef ref="RollingFile" />
-			<AppenderRef ref="Mail" />
+		<!-- 	<AppenderRef ref="Mail" /> -->
 			<AppenderRef ref="databaseAppender" />
 		</Logger>
 	</Loggers>

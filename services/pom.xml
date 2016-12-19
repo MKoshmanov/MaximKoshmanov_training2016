@@ -2,40 +2,51 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<parent>
 		<groupId>com.mkoshmanov.training</groupId>
 		<artifactId>urban.transport</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	
+
 	<artifactId>services</artifactId>
 	<packaging>jar</packaging>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>com.mkoshmanov.training</groupId>
 			<artifactId>dao-impl-db</artifactId>
 		</dependency>
-		
-		<dependency>		
+
+		<dependency>
 			<groupId>com.mkoshmanov.training</groupId>
 			<artifactId>dao-impl-xml</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.9.0</version>
 		</dependency>
 	</dependencies>
 </project>

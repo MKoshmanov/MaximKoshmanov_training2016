@@ -1,73 +1,203 @@
-00:57:05.671 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 16, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-00:57:05.698 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 17, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-00:57:05.699 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 18, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-00:57:05.703 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 19, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-00:57:06.068 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 20, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-00:57:06.071 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 21, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-00:57:06.073 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 22, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-00:57:06.310 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 23, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-00:57:06.313 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 24, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-00:57:06.315 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 25, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-00:57:06.521 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 26, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-00:57:06.523 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 27, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-00:57:06.525 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 28, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:01:34.817 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 29, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:01:34.818 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 30, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:01:34.820 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 31, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:01:34.824 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 32, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-01:01:34.976 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 33, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:01:34.980 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 34, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:01:34.982 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 35, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:01:34.989 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 36, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-01:01:34.990 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 37, first name = Vasiliy, last name = Nosov, birthday = 1984-01-01T00:00:00.000+0300, driving license category = D
-01:01:35.160 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 38, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:01:35.163 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 39, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:01:35.165 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 40, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:01:35.366 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 41, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:01:35.368 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 42, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:01:35.371 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 43, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:43:50.083 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 44, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:43:50.084 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 45, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:43:50.085 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 46, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:43:50.089 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 47, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-01:43:50.315 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 48, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:43:50.316 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 49, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:43:50.317 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 50, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:43:50.323 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 51, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-01:43:50.325 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 52, first name = Vasiliy, last name = Nosov, birthday = 1984-01-01T00:00:00.000+0300, driving license category = D
-01:43:50.550 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 53, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:43:50.553 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 54, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:43:50.554 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 55, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:43:50.772 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 56, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:43:50.776 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 57, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:43:50.779 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 58, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:50:35.691 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 59, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:50:35.693 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 60, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:50:35.694 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 61, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:50:35.698 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 62, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-01:50:35.876 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 63, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:50:35.879 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 64, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:50:35.881 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 65, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:50:35.888 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 66, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-01:50:35.890 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 67, first name = Vasiliy, last name = Nosov, birthday = 1984-01-01T00:00:00.000+0300, driving license category = D
-01:50:36.074 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 68, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:50:36.076 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 69, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:50:36.078 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 70, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-01:50:36.320 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 71, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-01:50:36.323 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 72, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-01:50:36.325 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 73, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-02:42:39.207 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 74, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-02:42:39.224 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 75, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-02:42:39.225 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 76, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-02:42:39.230 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 77, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-02:42:39.434 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 78, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-02:42:39.444 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 79, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-02:42:39.447 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 80, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-02:42:39.459 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 81, first name = Sergey, last name = Nikolaev, birthday = 1987-01-01T00:00:00.000+0300, driving license category = D
-02:42:39.461 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 82, first name = Vasiliy, last name = Nosov, birthday = 1984-01-01T00:00:00.000+0300, driving license category = D
-02:42:39.667 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 83, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-02:42:39.669 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 84, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-02:42:39.672 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 85, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
-02:42:39.885 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 86, first name = Ivan, last name = Ivanov, birthday = 1963-12-04T00:00:00.000+0300, driving license category = D
-02:42:39.886 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 87, first name = Vasiliy, last name = Pupkin, birthday = 1981-02-14T00:00:00.000+0300, driving license category = D
-02:42:39.888 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Driver hire: id = 88, first name = Oleg, last name = Vasechkin, birthday = 1976-01-01T00:00:00.000+0300, driving license category = D
+00:06:33.343 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 459, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:06:33.485 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 460, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+00:06:38.650 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Trying to get driver with id: 818
+00:06:39.051 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 461, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:06:39.058 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 462, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+00:06:39.465 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 463, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:06:39.470 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 464, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+00:06:39.887 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 465, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:06:39.892 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 466, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+00:06:40.187 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 467, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:06:40.192 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 468, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+00:06:40.453 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 469, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:06:40.457 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 470, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+00:06:40.709 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 471, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:06:40.714 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 472, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+00:07:09.889 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 473, vehicle type = Bus, route number = 1, route name = А - B, 
+00:07:09.903 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 474, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:11:23.871 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 475, vehicle type = Bus, route number = 1, route name = А - B, 
+00:11:23.885 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 476, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:11:23.933 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 1, arrival time = 1970-01-01T06:00:00.000+0300
+00:11:23.936 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 2, arrival time = 1970-01-01T07:00:00.000+0300
+00:11:23.971 [main] INFO  com.mkoshmanov.training.transport.services.impl.RouteStationServiceImpl - Route: id = 1, transport = Stop [name=B, id=3], stop = Transport [vehicleType=Trolleybus, routeNumber=2, routeName=B - A], sequence = 1, timetable = Timetable [arrivalTime=06:00:00, id=1]
+00:11:24.008 [main] INFO  com.mkoshmanov.training.transport.services.impl.RouteStationServiceImpl - Route: id = 2, transport = Stop [name=A, id=2], stop = Transport [vehicleType=Trolleybus, routeNumber=2, routeName=B - A], sequence = 2, timetable = Timetable [arrivalTime=07:00:00, id=2]
+00:12:50.753 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 477, vehicle type = Bus, route number = 1, route name = А - B, 
+00:12:50.773 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 478, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:12:50.790 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 3, arrival time = 1970-01-01T06:00:00.000+0300
+00:12:50.793 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 4, arrival time = 1970-01-01T07:00:00.000+0300
+00:16:56.174 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 479, vehicle type = Bus, route number = 1, route name = А - B, 
+00:16:56.188 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 480, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:16:56.203 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 5, arrival time = 1970-01-01T06:00:00.000+0300
+00:16:56.206 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 6, arrival time = 1970-01-01T07:00:00.000+0300
+00:16:56.688 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 481, vehicle type = Bus, route number = 1, route name = А - B, 
+00:16:56.694 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 482, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:16:56.708 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 7, arrival time = 1970-01-01T06:00:00.000+0300
+00:16:56.711 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 8, arrival time = 1970-01-01T07:00:00.000+0300
+00:16:57.332 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 483, vehicle type = Bus, route number = 1, route name = А - B, 
+00:16:57.337 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 484, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:16:57.356 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 9, arrival time = 1970-01-01T06:00:00.000+0300
+00:16:57.361 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 10, arrival time = 1970-01-01T07:00:00.000+0300
+00:16:57.987 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 485, vehicle type = Bus, route number = 1, route name = А - B, 
+00:16:57.993 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 486, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:16:58.010 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 11, arrival time = 1970-01-01T06:00:00.000+0300
+00:16:58.015 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 12, arrival time = 1970-01-01T07:00:00.000+0300
+00:17:56.802 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 487, vehicle type = Bus, route number = 1, route name = А - B, 
+00:17:56.822 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 488, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:17:56.851 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 13, arrival time = 1970-01-01T06:00:00.000+0300
+00:17:56.854 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 14, arrival time = 1970-01-01T07:00:00.000+0300
+00:17:57.456 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 489, vehicle type = Bus, route number = 1, route name = А - B, 
+00:17:57.497 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 490, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:17:57.509 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 15, arrival time = 1970-01-01T06:00:00.000+0300
+00:17:57.511 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 16, arrival time = 1970-01-01T07:00:00.000+0300
+00:17:58.093 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 491, vehicle type = Bus, route number = 1, route name = А - B, 
+00:17:58.099 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 492, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:17:58.115 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 17, arrival time = 1970-01-01T06:00:00.000+0300
+00:17:58.117 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 18, arrival time = 1970-01-01T07:00:00.000+0300
+00:17:58.567 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 493, vehicle type = Bus, route number = 1, route name = А - B, 
+00:17:58.572 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 494, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:17:58.590 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 19, arrival time = 1970-01-01T06:00:00.000+0300
+00:17:58.594 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 20, arrival time = 1970-01-01T07:00:00.000+0300
+00:18:25.246 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 495, vehicle type = Bus, route number = 1, route name = А - B, 
+00:18:25.266 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 496, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:18:25.320 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 21, arrival time = 1970-01-01T06:00:00.000+0300
+00:18:25.324 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 22, arrival time = 1970-01-01T07:00:00.000+0300
+00:18:25.954 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 497, vehicle type = Bus, route number = 1, route name = А - B, 
+00:18:25.959 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 498, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:18:25.982 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 23, arrival time = 1970-01-01T06:00:00.000+0300
+00:18:25.985 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 24, arrival time = 1970-01-01T07:00:00.000+0300
+00:18:27.381 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 499, vehicle type = Bus, route number = 1, route name = А - B, 
+00:18:27.455 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 500, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:18:27.476 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 25, arrival time = 1970-01-01T06:00:00.000+0300
+00:18:27.481 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 26, arrival time = 1970-01-01T07:00:00.000+0300
+00:18:28.177 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 501, vehicle type = Bus, route number = 1, route name = А - B, 
+00:18:28.181 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 502, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+00:18:28.200 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 27, arrival time = 1970-01-01T06:00:00.000+0300
+00:18:28.204 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 28, arrival time = 1970-01-01T07:00:00.000+0300
+00:22:40.459 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 503, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:22:40.497 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 504, vehicle type = Bus, route number = 2, route name = Б - В, 
+00:22:40.695 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 505, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:22:40.704 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 506, vehicle type = Bus, route number = 2, route name = Б - В, 
+00:22:40.714 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 507, vehicle type = Bus, route number = 5, route name = А - К, 
+00:22:40.717 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 508, vehicle type = Bus, route number = 5, route name = А - К, 
+00:22:40.963 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 509, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:22:40.968 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 510, vehicle type = Bus, route number = 2, route name = Б - В, 
+00:22:41.241 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 511, vehicle type = Bus, route number = 1, route name = А - Б, 
+00:22:41.247 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 512, vehicle type = Bus, route number = 2, route name = Б - В, 
+00:22:41.254 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 513, vehicle type = Bus, route number = 5, route name = А - К, 
+14:55:40.111 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 514, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:55:40.392 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 515, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:55:40.712 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 516, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:55:40.718 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 517, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:55:40.730 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 518, vehicle type = Bus, route number = 5, route name = А - К, 
+14:55:40.735 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 519, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+14:55:41.035 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 520, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:55:41.040 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 521, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:55:41.659 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 522, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:55:41.665 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 523, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:55:41.748 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 524, vehicle type = Bus, route number = 5, route name = А - К, 
+14:55:41.754 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 525, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+14:55:42.024 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 526, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:55:42.029 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 527, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:55:42.038 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 528, vehicle type = Bus, route number = 5, route name = А - К, 
+14:57:32.881 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 529, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:57:32.896 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 530, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:57:33.094 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 531, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:57:33.100 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 532, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:57:33.111 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 533, vehicle type = Bus, route number = 5, route name = А - К, 
+14:57:33.116 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 534, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+14:57:33.425 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 535, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:57:33.433 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 536, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:57:33.655 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 537, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:57:33.661 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 538, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:57:33.674 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 539, vehicle type = Bus, route number = 5, route name = А - К, 
+14:57:33.680 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 540, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+14:57:33.879 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 541, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:57:33.885 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 542, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:57:33.894 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 543, vehicle type = Bus, route number = 5, route name = А - К, 
+14:58:00.044 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 544, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:58:00.053 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 545, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:58:00.249 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 546, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:58:00.255 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 547, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:58:00.266 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 548, vehicle type = Bus, route number = 5, route name = А - К, 
+14:58:00.271 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 549, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+14:58:00.461 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 550, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:58:00.467 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 551, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:58:00.669 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 552, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:58:00.674 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 553, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:58:00.687 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 554, vehicle type = Bus, route number = 5, route name = А - К, 
+14:58:00.693 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 555, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+14:58:00.891 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 556, vehicle type = Bus, route number = 1, route name = А - Б, 
+14:58:00.898 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 557, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+14:58:00.906 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 558, vehicle type = Bus, route number = 5, route name = А - К, 
+15:54:16.042 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 559, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:54:16.052 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 560, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:54:16.295 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 561, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:54:16.300 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 562, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:54:16.310 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 563, vehicle type = Bus, route number = 5, route name = А - К, 
+15:54:16.315 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 564, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+15:54:16.500 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 565, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:54:16.506 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 566, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:54:16.728 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 567, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:54:16.733 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 568, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:54:16.745 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 569, vehicle type = Bus, route number = 5, route name = А - К, 
+15:54:16.750 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 570, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+15:54:16.940 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 571, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:54:16.945 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 572, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:54:16.953 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 573, vehicle type = Bus, route number = 5, route name = А - К, 
+15:55:21.373 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 574, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:55:21.391 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 575, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:55:21.641 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 576, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:55:21.646 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 577, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:55:21.656 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 578, vehicle type = Bus, route number = 5, route name = А - К, 
+15:55:21.661 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 579, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+15:55:21.897 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 580, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:55:21.903 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 581, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:55:22.142 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 582, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:55:22.147 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 583, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:55:22.159 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 584, vehicle type = Bus, route number = 5, route name = А - К, 
+15:55:22.163 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 585, vehicle type = Trolleybus, route number = 5, route name = А - К, 
+15:55:22.387 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 586, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:55:22.392 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 587, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:55:22.400 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 588, vehicle type = Bus, route number = 5, route name = А - К, 
+15:55:57.534 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 589, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:55:57.558 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 590, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:56:02.585 [main] INFO  com.mkoshmanov.training.transport.services.impl.DriverServiceImpl - Trying to get driver with id: 846
+15:56:02.912 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 591, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:56:02.917 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 592, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:56:03.236 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 593, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:56:03.242 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 594, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:56:03.537 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 595, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:56:03.542 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 596, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:56:03.818 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 597, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:56:03.823 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 598, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:56:04.162 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 599, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:56:04.167 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 600, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:56:04.507 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 601, vehicle type = Bus, route number = 1, route name = А - Б, 
+15:56:04.512 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 602, vehicle type = Trolleybus, route number = 2, route name = Б - В, 
+15:56:16.208 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 603, vehicle type = Bus, route number = 1, route name = А - B, 
+15:56:16.224 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 604, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+15:56:16.272 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 29, arrival time = 1970-01-01T06:00:00.000+0300
+15:56:16.278 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 30, arrival time = 1970-01-01T07:00:00.000+0300
+15:56:16.812 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 605, vehicle type = Bus, route number = 1, route name = А - B, 
+15:56:16.817 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 606, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+15:56:16.835 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 31, arrival time = 1970-01-01T06:00:00.000+0300
+15:56:16.840 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 32, arrival time = 1970-01-01T07:00:00.000+0300
+15:56:17.413 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 607, vehicle type = Bus, route number = 1, route name = А - B, 
+15:56:17.418 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 608, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+15:56:17.437 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 33, arrival time = 1970-01-01T06:00:00.000+0300
+15:56:17.442 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 34, arrival time = 1970-01-01T07:00:00.000+0300
+15:56:17.918 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 609, vehicle type = Bus, route number = 1, route name = А - B, 
+15:56:17.923 [main] INFO  com.mkoshmanov.training.transport.services.impl.TransportServiceImpl - Transport: id = 610, vehicle type = Trolleybus, route number = 2, route name = B - A, 
+15:56:17.940 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 35, arrival time = 1970-01-01T06:00:00.000+0300
+15:56:17.945 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 36, arrival time = 1970-01-01T07:00:00.000+0300
+15:57:39.671 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 41, arrival time = 1970-01-01T06:00:00.000+0300
+15:57:39.692 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 42, arrival time = 1970-01-01T06:30:00.000+0300
+15:57:39.698 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 43, arrival time = 1970-01-01T08:00:00.000+0300
+15:57:39.824 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 44, arrival time = 1970-01-01T06:00:00.000+0300
+15:57:39.829 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 45, arrival time = 1970-01-01T06:30:00.000+0300
+15:57:39.947 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 46, arrival time = 1970-01-01T06:00:00.000+0300
+15:57:39.953 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 47, arrival time = 1970-01-01T06:30:00.000+0300
+15:57:40.087 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 48, arrival time = 1970-01-01T06:00:00.000+0300
+15:57:40.093 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 49, arrival time = 1970-01-01T06:30:00.000+0300
+15:57:40.104 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 50, arrival time = 1970-01-01T07:00:00.000+0300
+15:57:40.108 [main] INFO  com.mkoshmanov.training.transport.services.impl.TimetableServiceImpl - Timetable created: id = 51, arrival time = 1970-01-01T07:03:00.000+0300

@@ -25,8 +25,6 @@ public class TimetableDaoXmlImpl extends GenericDaoXxlImpl<Timetable> implements
 		List<Timetable> timetables = readCollection();
 		for (Timetable timetable : timetables) {
 			if (timetable.getId().equals(entity.getId())) {
-				timetable.setTransportStopId(entity.getTransportStopId());
-				timetable.setRouteId(entity.getRouteId());
 				timetable.setArrivalTime(entity.getArrivalTime());
 				break;
 			}

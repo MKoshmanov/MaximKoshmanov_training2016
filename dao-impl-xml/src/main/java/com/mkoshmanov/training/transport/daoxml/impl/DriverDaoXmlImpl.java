@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.mkoshmanov.training.transport.daoapi.IDriverDao;
-import com.mkoshmanov.training.transport.daodb.customentity.DriversOnRoute;
 import com.mkoshmanov.training.transport.datamodel.Driver;
 
 @Repository
@@ -29,7 +28,7 @@ public class DriverDaoXmlImpl extends GenericDaoXxlImpl<Driver> implements IDriv
 				driver.setFirstName(entity.getFirstName());
 				driver.setLastName(entity.getLastName());
 				driver.setBirthday(entity.getBirthday());
-				driver.setLicenseCategory(entity.getLicenseCategory());
+				driver.setTransport(entity.getTransport());
 				break;
 			}
 			else {
@@ -40,17 +39,17 @@ public class DriverDaoXmlImpl extends GenericDaoXxlImpl<Driver> implements IDriv
 	}
 
 	@Override
-	public List<DriversOnRoute> getDriversOnParticularRoute(Integer number) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public List<DriversOnRoute> getAllBusyDrivers() {
+	public List<Driver> getAllBusyDrivers() {
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<Driver> getAllFreeDrivers() {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public List<Driver> getDriversOnParticularRoute(Integer routeNumber, String vehicleType) {
 		throw new UnsupportedOperationException();
 	}
 

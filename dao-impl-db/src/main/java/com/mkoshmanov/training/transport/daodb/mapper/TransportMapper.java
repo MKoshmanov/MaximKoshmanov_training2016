@@ -1,4 +1,4 @@
-package com.mkoshmanov.training.transport.daodb.mapper;
+/*package com.mkoshmanov.training.transport.daodb.mapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ public class TransportMapper implements RowMapper<Transport> {
 	@Override
 	public Transport mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Long id = rs.getLong("id");
-		String vehicleType = rs.getString("vehicleType");
+		String vehicleType = rs.getString("vehicle_type");
 		Long driverId = rs.getLong("driverId");
 		Long routeId = rs.getLong("routeId");
 		Transport entity = new Transport();
@@ -22,5 +22,4 @@ public class TransportMapper implements RowMapper<Transport> {
 		entity.setRouteId(routeId);
 		return entity;
 	}
-
-}
+}*/
